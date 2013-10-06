@@ -26,11 +26,22 @@ module.exports = function (grunt) {
 				src: "<%=srcDir%>/css/*",
 				dest: "<%=tgtDir%>/css/"
 			},
-			yateRuntime: {
+			js: {
 				expand: true,
 				flatten: true,
-				src: "node_modules/yate/lib/runtime.js",
+				src: "<%=srcDir%>/js/*",
 				dest: "<%=tgtDir%>/js/"
+			},
+			data: {
+				expand: true,
+				flatten: true,
+				src: "<%=srcDir%>/data/*",
+				dest: "<%=tgtDir%>/data/"
+			},
+			yateRuntime: {
+				flatten: true,
+				src: "node_modules/yate/lib/runtime.js",
+				dest: "<%=tgtDir%>/js/yate-runtime.js"
 			}
 		},
 
@@ -44,10 +55,11 @@ module.exports = function (grunt) {
 		uglify: {
 			js: {
 				src: [
-					"<%=tgtDir%>/js/runtime.js",
+					"<%=tgtDir%>/js/yate-runtime.js",
+					"<%=srcDir%>/js/jquery-1.10.2.js",
 					"<%=tgtDir%>/js/*.js",
-					"!<%=tgtDir%>/js/app.min.js",
-					"<%=srcDir%>/js/*"
+					"<%=srcDir%>/js/*",
+					"!<%=tgtDir%>/js/app.min.js"
 				],
 				dest: "<%=tgtDir%>/js/app.min.js"
 			}
@@ -80,11 +92,12 @@ module.exports = function (grunt) {
 	}
 
 	grunt.registerTask("dev", [
-		"clean:target", "env:dev", "preprocess:html", "yate", "copy:yateRuntime", "copy:css", "clean:yateobj"
+		"clean:target", "env:dev", "preprocess:html", "yate", "copy:yateRuntime",
+		"copy:css", "copy:js", "copy:data", "clean:yateobj"
 	]);
 	grunt.registerTask("prod", [
 		"clean:target", "env:prod", "preprocess:html", "yate", "copy:yateRuntime",
-		"cssmin:css", "uglify:js", "clean:yateobj", "clean:afterProd"
+		"cssmin:css", "uglify:js", "copy:data", "clean:yateobj", "clean:afterProd"
 	]);
 };
 

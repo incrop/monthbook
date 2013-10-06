@@ -1,1 +1,31 @@
-[]
+[
+	{
+		"id": 0,
+		"firstName": "Никита",
+		"lastName": "Попов",
+		"city": "Санкт-Петербург",
+		"photo": "http://cs408530.vk.me/v408530792/1e45/XISCuQa83W4.jpg",
+		"preview": "http://placekitten.com/50/50",
+		"about": "О себе о себе о себе",
+		"profiles": {
+			"facebook": "https://www.facebook.com/popov.nikita",
+			"vk": "http://vk.com/nikita.v.popov",
+			"github": "http://github.com/losnikitos",
+			"ya": "http://losnikitos123.ya.ru"
+		}
+	},
+	{
+		"id": 1,
+		"firstName": "Роман",
+		"lastName": "Орловский",
+		"city": "Нижний Новгород",
+		"photo": "http://cs14115.vk.me/c315820/v315820751/33bf/zID6ILpd6L0.jpg",
+		"preview": "http://placekitten.com/50/50",
+		"about": "Обо мне, обо мне, обо мне",
+		"profiles": {
+			"vk": "http://vk.com/id3776751",
+			"github": "https://github.com/Romanaldo/",
+			"ya": "http://ctuxu-r.ya.ru/"
+		}
+	}
+]

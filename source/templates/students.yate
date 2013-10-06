@@ -1,0 +1,18 @@
+module "students"
+
+match / {
+	for .data {
+		<div class="post">
+			if (.expanded) {
+				<img src="{.photo}"/>
+			} else {
+				<img src="{.preview}"/>
+			}
+			<div class="caption">{.firstName} {.lastName}</div>
+			if (.expanded) {
+				<hr/>
+				<div class="content">{.about}</div>
+			}
+		</div>
+	}
+}
