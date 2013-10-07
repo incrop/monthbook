@@ -1,18 +1,22 @@
 module "students"
 
 match / {
-	for .data {
-		<div class="post">
-			if (.expanded) {
-				<img src="{.photo}"/>
-			} else {
-				<img src="{.preview}"/>
-			}
-			<div class="caption">{.firstName} {.lastName}</div>
-			if (.expanded) {
-				<hr/>
-				<div class="content">{.about}</div>
-			}
-		</div>
+	for .students {
+		apply .
 	}
+}
+
+match .students {
+	<div class="post">
+		if (.expanded) {
+			<img width="250" src="{.photo}"/>
+		} else {
+			<img height="50" width="50" src="{.preview}"/>
+		}
+		<div class="caption">{.firstName} {.lastName}</div>
+		if (.expanded) {
+			<hr/>
+			<div class="content">{.about}</div>
+		}
+	</div>
 }

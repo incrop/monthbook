@@ -23,29 +23,17 @@
 
 		<div class="header">Список участников</div>
 
-		<div class="post">
-			<img src="http://placekitten.com/50/50"/>
-			<div class="caption">John Doe</div>
-		</div>
-
-		<div class="post">
-			<img src="http://placekitten.com/200/200"/>
-			<div class="caption">Richard Roe</div>
-			<hr/>
-			<div class="content">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-				Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</div>
-		</div>
 	</div>
 
 	<!-- @if ENV='dev' -->
 	<script src="js/jquery-1.10.2.js"></script>
+
 	<script src="js/yate-runtime.js"></script>
 	<script src="js/students.js"></script>
+
+	<script src="js/json2.js"></script>
+	<script src="js/underscore.js"></script>
+	<script src="js/backbone.js"></script>
 	<!-- @endif -->
 
 	<!-- @if ENV='prod' -->
@@ -53,9 +41,9 @@
 	<!-- @endif -->
 
 	<script>
-		$.get("data/students.json", function (students) {
-			students[0].expanded = true;
-			$("#wrapper").append(yr.run('students', { data: students }));
+		$.get("data/students.json", function (data) {
+			data[24].expanded = true;
+			$("#wrapper").append(yr.run('students', { students: data }));
 		});
 	</script>
 </body>
