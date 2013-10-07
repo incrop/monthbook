@@ -1,7 +1,0 @@
-module "hello"
-
-match / {
-	for .data {
-		"Hello, { . }\n"
-	}
-}
