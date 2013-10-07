@@ -61,10 +61,14 @@ module.exports = function (grunt) {
 		uglify: {
 			js: {
 				src: [
-					"<%=tgtDir%>/js/yate-runtime.js",
 					"<%=srcDir%>/js/jquery-1.10.2.js",
-					"<%=tgtDir%>/js/*.js",
+					"<%=srcDir%>/js/json2.js",
+					"<%=srcDir%>/js/underscore.js",
+					"<%=srcDir%>/js/backbone.js",
 					"<%=srcDir%>/js/*",
+
+					"<%=tgtDir%>/js/yate-runtime.js",
+					"<%=tgtDir%>/js/*.js",
 					"!<%=tgtDir%>/js/app.min.js"
 				],
 				dest: "<%=tgtDir%>/js/app.min.js"

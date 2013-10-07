@@ -1,13 +1,14 @@
 module "students"
 
 match / {
+	<div class="header">Список участников</div>
 	for .students {
 		apply .
 	}
 }
 
 match .students {
-	<div class="post">
+	<div class="student post">
 		if (.expanded) {
 			<img width="250" src="{.photo}"/>
 		} else {
