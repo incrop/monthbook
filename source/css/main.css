@@ -42,9 +42,10 @@ body {
 	font-weight: bold;
 }
 
-.post img {
+.post .avatar {
 	float: left;
 	margin-right: 10px;
+	cursor: pointer;
 }
 
 .post {
