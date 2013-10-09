@@ -25,8 +25,16 @@ body {
 	display: inline;
 	margin-right: 40px;
 	margin-left: 40px;
-	cursor: pointer;
 }
+
+.nav ul li a {
+	text-decoration: none;
+	color: black;
+}
+.nav ul li a:hover {
+	color: red;
+}
+
 .nav, .post {
 	border: solid 1px;
 	background-color: #eee;
@@ -63,6 +71,6 @@ body {
 	color: red;
 }
 
-.post .content {
+.post p {
 	padding: 10px;
 }

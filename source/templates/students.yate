@@ -26,7 +26,7 @@ match .students {
 		<div class="caption">{.firstName} {.lastName}</div>
 		if (.expanded) {
 			<hr/>
-			<div class="content">{.about}</div>
+			<p>{.about}</p>
 		}
 	</div>
 }
