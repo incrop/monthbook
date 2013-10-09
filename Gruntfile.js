@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 			yateRuntime: {
 				flatten: true,
 				src: "node_modules/yate/lib/runtime.js",
-				dest: "<%=tgtDir%>/js/yate-runtime.js"
+				dest: "<%=tgtDir%>/js/yate/runtime.js"
 			}
 		},
 
@@ -61,10 +61,14 @@ module.exports = function (grunt) {
 		uglify: {
 			js: {
 				src: [
-					"<%=tgtDir%>/js/yate-runtime.js",
 					"<%=srcDir%>/js/jquery-1.10.2.js",
-					"<%=tgtDir%>/js/*.js",
+					"<%=srcDir%>/js/json2.js",
+					"<%=srcDir%>/js/underscore.js",
+					"<%=srcDir%>/js/backbone.js",
 					"<%=srcDir%>/js/*",
+
+					"<%=tgtDir%>/js/yate/runtime.js",
+					"<%=tgtDir%>/js/yate/*.js",
 					"!<%=tgtDir%>/js/app.min.js"
 				],
 				dest: "<%=tgtDir%>/js/app.min.js"
@@ -80,7 +84,7 @@ module.exports = function (grunt) {
 
 		yate: {
 			templates: {
-				dest: '<%=tgtDir%>/js/',
+				dest: '<%=tgtDir%>/js/yate/',
 				src: '<%=srcDir%>/templates/*.yate',
 				ext: '.js',
 				expand: true,

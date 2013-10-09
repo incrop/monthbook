@@ -15,36 +15,34 @@
 	<div id="wrapper">
 		<div class="nav">
 			<ul>
-				<li>О ШРИ</li>
-				<li>Участники</li>
-				<li>Лекции</li>
+				<li><a href="#">О ШРИ</a></li>
+				<li><a href="#/students">Участники</a></li>
+				<li><a href="#">Лекции</a></li>
 			</ul>
 		</div>
 
-		<div class="header">Список участников</div>
+		<div id="page">
+
+		</div>
 
 	</div>
 
 	<!-- @if ENV='dev' -->
 	<script src="js/jquery-1.10.2.js"></script>
 
-	<script src="js/yate-runtime.js"></script>
-	<script src="js/students.js"></script>
+	<script src="js/yate/runtime.js"></script>
+	<script src="js/yate/about.js"></script>
+	<script src="js/yate/students.js"></script>
 
 	<script src="js/json2.js"></script>
 	<script src="js/underscore.js"></script>
 	<script src="js/backbone.js"></script>
+	<script src="js/app.js"></script>
 	<!-- @endif -->
 
 	<!-- @if ENV='prod' -->
 	<script src="js/app.min.js"></script>
 	<!-- @endif -->
 
-	<script>
-		$.get("data/students.json", function (data) {
-			data[24].expanded = true;
-			$("#wrapper").append(yr.run('students', { students: data }));
-		});
-	</script>
 </body>
 </html>
