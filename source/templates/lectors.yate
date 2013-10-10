@@ -1,0 +1,36 @@
+module "lectors"
+
+match / {
+	if (.header) {
+		<div class="header">
+			.header
+		</div>
+		for .lectors {
+			apply .
+		}
+	} else {
+		apply .lectors
+	}
+}
+
+match .lectors {
+	<div class="lector post" data-id="{.id}">
+		<img class="avatar">
+			if (.expanded) {
+				@width = 250
+				@src = .photo_url
+			} else {
+				@height = 50
+				@width = 50
+				@src = .preview_url
+			}
+		</img>
+		<div class="content">
+			<div class="caption">{.first_name} {.last_name}</div>
+			if (.expanded && .about) {
+				<hr/>
+				<p>{.about}</p>
+			}
+		</div>
+	</div>
+}
