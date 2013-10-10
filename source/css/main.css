@@ -52,12 +52,21 @@ body {
 
 .post .avatar {
 	float: left;
-	margin-right: 10px;
+	cursor: pointer;
+	min-height: 50px;
+}
+
+.post .content {
+	float: none;
+	width: auto;
+	overflow: hidden;
+	padding-left: 10px;
 	cursor: pointer;
 }
 
 .post {
-	overflow: auto;
+	height: auto;
+	overflow: hidden;
 }
 
 .post .caption {

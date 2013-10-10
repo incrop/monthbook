@@ -1,13 +1,15 @@
 module "students"
 
 match / {
-	if (.single) {
-		apply .students
-	} else {
-		<div class="header">Список участников</div>
+	if (.header) {
+		<div class="header">
+			.header
+		</div>
 		for .students {
 			apply .
 		}
+	} else {
+		apply .students
 	}
 }
 
@@ -23,10 +25,12 @@ match .students {
 				@src = .preview
 			}
 		</img>
-		<div class="caption">{.firstName} {.lastName}</div>
-		if (.expanded) {
-			<hr/>
-			<p>{.about}</p>
-		}
+		<div class="content">
+			<div class="caption">{.firstName} {.lastName}</div>
+			if (.expanded) {
+				<hr/>
+				<p>{.about}</p>
+			}
+		</div>
 	</div>
 }

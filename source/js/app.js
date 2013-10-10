@@ -32,14 +32,17 @@ $(function () {
 			var self = this;
 			this.collection.on("change", function (model) {
 				self.$el.children("[data-id='" + model.get("id") + "']")
-					.replaceWith(yr.run("students", { single: true, students: model.toJSON() }));
+					.replaceWith(yr.run("students", { students: model.toJSON() }));
 			});
 		},
 		render: function () {
 			var self = this;
 			this.collection.fetch({
 				success: function(studentList) {
-					self.$el.html(yr.run("students", { students: studentList.toJSON() }));
+					self.$el.html(yr.run("students", {
+						header: "Список студентов",
+						students: studentList.toJSON()
+					}));
 				}
 			});
 		}
