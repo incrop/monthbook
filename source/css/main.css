@@ -50,10 +50,33 @@ body {
 	font-weight: bold;
 }
 
-.post .avatar {
+.post .left {
 	float: left;
+}
+
+.post .social {
+	width: 250px;
+	text-align: left;
+}
+
+.post .social a {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-top: 5px;
+	margin-right: 10px;
+	outline: none;
+	border-style: none;
+	background-image: url('../img/social.png');
+}
+
+.post .social a.ya       { background-position:  0px 0px; }
+.post .social a.vk       { background-position: 24px 0px; }
+.post .social a.github   { background-position: 48px 0px; }
+.post .social a.facebook { background-position: 72px 0px; }
+
+.post .avatar {
 	cursor: pointer;
-	min-height: 50px;
 }
 
 .post .content {

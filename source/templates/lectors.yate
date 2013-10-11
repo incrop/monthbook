@@ -1,36 +1,50 @@
 module "lectors"
 
 match / {
-	if (.header) {
-		<div class="header">
-			.header
-		</div>
+	if (.single) {
+		apply .lectors
+	} else {
+		<div class="header">Список лекторов</div>
 		for .lectors {
 			apply .
 		}
-	} else {
-		apply .lectors
 	}
 }
 
 match .lectors {
-	<div class="lector post" data-id="{.id}">
-		<img class="avatar">
-			if (.expanded) {
-				@width = 250
-				@src = .photo_url
-			} else {
-				@height = 50
-				@width = 50
-				@src = .preview_url
-			}
-		</img>
+	lector_id = .id
+	<div class="lector post" data-id="{lector_id}">
+		<div class="left">
+			<img class="avatar">
+				if (.expanded) {
+					@width = 250
+					@src = .photo_url
+				} else {
+					@height = 50
+					@width = 50
+					@src = .preview_url
+				}
+			</img>
+		</div>
 		<div class="content">
 			<div class="caption">{.first_name} {.last_name}</div>
-			if (.expanded && .about) {
-				<hr/>
-				<p>{.about}</p>
-			}
+			if (.expanded) {
+				if (.about) {
+					<hr/>
+					<p>{.about}</p>
+				}
+				lector_lectures = ..lectures[.lector_id == lector_id]
+				if (lector_lectures) {
+					<hr/>
+					<div class="caption">Лекции:</div>
+					for lector_lectures {
+						<p>
+							"{.name}: "
+							<a href="{.url}">{.url}</a>
+						</p>
+					}
+				}
+			}			
 		</div>
 	</div>
 }

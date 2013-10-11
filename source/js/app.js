@@ -32,7 +32,10 @@ $(function () {
 			var self = this;
 			this.students.on("change", function (model) {
 				self.$el.children("[data-id='" + model.get("id") + "']")
-					.replaceWith(yr.run("students", { students: model.toJSON() }));
+					.replaceWith(yr.run("students", { 
+						single: true,
+						students: model.toJSON() 
+					}));
 			});
 		},
 		render: function () {
@@ -40,7 +43,6 @@ $(function () {
 			this.students.fetch({
 				success: function(studentList) {
 					self.$el.html(yr.run("students", {
-						header: "Список студентов",
 						students: studentList.toJSON()
 					}));
 				}
@@ -79,7 +81,11 @@ $(function () {
 			var self = this;
 			this.lectors.on("change", function (model) {
 				self.$el.children("[data-id='" + model.get("id") + "']")
-						.replaceWith(yr.run("lectors", { lectors: model.toJSON() }));
+						.replaceWith(yr.run("lectors", {
+							single: true,
+							lectors: model.toJSON(), 
+							lectures: self.lectures.toJSON()
+						}));
 			});
 		},
 		render: function () {
@@ -89,7 +95,6 @@ $(function () {
 				this.lectures.fetch()
 			).done(function () {
 				self.$el.html(yr.run("lectors", {
-					header: "Список лекторов",
 					lectors: self.lectors.toJSON(),
 					lectures: self.lectures.toJSON()
 				}));
