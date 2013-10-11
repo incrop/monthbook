@@ -21,33 +21,42 @@ module.exports = function (grunt) {
 
 		copy: {
 			css: {
-				expand: true,
-				flatten: true,
-				src: "<%=srcDir%>/css/*",
-				dest: "<%=tgtDir%>/css/"
+				files: [{
+					expand: true,
+					cwd: "<%=srcDir%>/css/",
+					src: ["**"],
+					dest: "<%=tgtDir%>/css/"
+				}]
 			},
 			js: {
-				expand: true,
-				flatten: true,
-				src: "<%=srcDir%>/js/*",
-				dest: "<%=tgtDir%>/js/"
+				files: [{
+					expand: true,
+					cwd: "<%=srcDir%>/js/",
+					src: ["**"],
+					dest: "<%=tgtDir%>/js/"
+				}]
 			},
 			data: {
-				expand: true,
-				flatten: true,
-				src: "<%=srcDir%>/data/*",
-				dest: "<%=tgtDir%>/data/"
+				files: [{
+					expand: true,
+					cwd: "<%=srcDir%>/data/",
+					src: ["**"],
+					dest: "<%=tgtDir%>/data/"
+				}]
 			},
 			img: {
-				expand: true,
-				flatten: true,
-				src: "<%=srcDir%>/img/*",
-				dest: "<%=tgtDir%>/img/"
+				files: [{
+					expand: true,
+					cwd: "<%=srcDir%>/img/",
+					src: ["**"],
+					dest: "<%=tgtDir%>/img/"
+				}]
 			},
 			yateRuntime: {
-				flatten: true,
-				src: "node_modules/yate/lib/runtime.js",
-				dest: "<%=tgtDir%>/js/yate/runtime.js"
+				files: [{
+					src: "node_modules/yate/lib/runtime.js",
+					dest: "<%=tgtDir%>/js/yate/runtime.js"
+				}]
 			}
 		},
 
