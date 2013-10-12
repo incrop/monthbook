@@ -54,27 +54,6 @@ body {
 	float: left;
 }
 
-.post .social {
-	width: 250px;
-	text-align: left;
-}
-
-.post .social a {
-	width: 24px;
-	height: 24px;
-	display: inline-block;
-	margin-top: 5px;
-	margin-right: 10px;
-	outline: none;
-	border-style: none;
-	background-image: url('../img/social.png');
-}
-
-.post .social a.ya       { background-position:  0px 0px; }
-.post .social a.facebook { background-position: 24px 0px; }
-.post .social a.github   { background-position: 48px 0px; }
-.post .social a.vk       { background-position: 72px 0px; }
-
 .post .avatar {
 	cursor: pointer;
 }
@@ -91,16 +70,42 @@ body {
 	overflow: hidden;
 }
 
+.post .caption-wrapper {
+	padding: 10px;
+	overflow: auto;
+}
+
+
 .post .caption {
 	line-height: 30px;
-	padding: 10px;
 	font-weight: bold;
 	cursor: pointer;
+	float: left;
+
 }
 
 .post .caption:first-letter {
 	color: red;
 }
+
+.post .social {
+	float: right;
+}
+
+.post .social a {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-left: 10px;
+	outline: none;
+	border-style: none;
+	background-image: url('../img/social.png');
+}
+
+.post .social a.ya       { background-position:  0px 0px; }
+.post .social a.facebook { background-position: 24px 0px; }
+.post .social a.github   { background-position: 48px 0px; }
+.post .social a.vk       { background-position: 72px 0px; }
 
 .post p {
 	padding: 10px;

@@ -24,25 +24,25 @@ match .students {
 					@src = .preview
 				}
 			</img>
-			if (.expanded && .profiles) {
-				<div class="social">
-					if (.profiles.ya) {
-						<a class="ya" href="{.profiles.ya}"></a>
-					}
-					if (.profiles.vk) {
-						<a class="vk" href="{.profiles.vk}"></a>
-					}
-					if (.profiles.facebook) {
-						<a class="facebook" href="{.profiles.facebook}"></a>
-					}
-					if (.profiles.github) {
-						<a class="github" href="{.profiles.github}"></a>
-					}
-				</div>
+			func sn_icon(sn_name) {
+				sn_url = .profiles.*[name() == sn_name]
+				if (sn_url) {
+					<a class="{sn_name}" href="{sn_url}"></a>
+				}
 			}
 		</div>
 		<div class="content">
-			<div class="caption">{.first_name} {.last_name}</div>
+			<div class="caption-wrapper">
+				<div class="caption">{.first_name} {.last_name}</div>
+				if (.profiles) {
+					<div class="social">
+						sn_icon("ya")
+						sn_icon("vk")
+						sn_icon("facebook")
+						sn_icon("github")
+					</div>
+				}
+			</div>
 			if (.expanded) {
 				<hr/>
 				<p>{.about}</p>
