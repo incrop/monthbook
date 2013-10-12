@@ -1,5 +1,9 @@
 $(function () {
-
+	var apiKey = "5nRd9seKwrVIy4gMihKwgiMIueZKH6g0";
+	$.ajaxPrefilter(function (options, originalOptions, jqXHR) {
+		options.url = "https://api.mongolab.com/api/1/databases/monthbook/collections/" +
+				options.url + "?apiKey=" + apiKey;
+	});
 	var AboutView = Backbone.View.extend({
 		el: "#page",
 		render: function () {
@@ -8,13 +12,14 @@ $(function () {
 	});
 
 	var Student = Backbone.Model.extend({
+		idAttribute: "_id",
 		toggle: function() {
 			this.set("expanded", !this.get("expanded"));
 		}
 	});
 
 	var StudentList = Backbone.Collection.extend({
-		url: "data/students.json",
+		url: "students",
 		model: Student
 	});
 
@@ -31,7 +36,7 @@ $(function () {
 		initialize: function() {
 			var self = this;
 			this.students.on("change", function (model) {
-				self.$el.children("[data-id='" + model.get("id") + "']")
+				self.$el.children("[data-id='" + model.get("_id") + "']")
 					.replaceWith(yr.run("students", { 
 						single: true,
 						students: model.toJSON() 
@@ -51,18 +56,21 @@ $(function () {
 	});
 
 	var Lector = Backbone.Model.extend({
+		idAttribute: "_id",
 		toggle: function() {
 			this.set("expanded", !this.get("expanded"));
 		}
 	});
 	var LectorList = Backbone.Collection.extend({
-		url: "data/lectors.json",
+		url: "lectors",
 		model: Lector
 	});
 
-	var Lecture = Backbone.Model.extend({});
+	var Lecture = Backbone.Model.extend({
+		idAttribute: "_id"
+	});
 	var LectureList = Backbone.Collection.extend({
-		url: "data/lectures.json",
+		url: "lectures",
 		model: Lecture
 	});
 
@@ -80,7 +88,7 @@ $(function () {
 		initialize: function() {
 			var self = this;
 			this.lectors.on("change", function (model) {
-				self.$el.children("[data-id='" + model.get("id") + "']")
+				self.$el.children("[data-id='" + model.get("_id") + "']")
 						.replaceWith(yr.run("lectors", {
 							single: true,
 							lectors: model.toJSON(), 

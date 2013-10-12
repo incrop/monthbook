@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+	Check the browser console!
+	<script src="../js/jquery-1.10.2.js"></script>
+	<script>
+		$(function() {
+			var key = "5nRd9seKwrVIy4gMihKwgiMIueZKH6g0";
+
+			function urlFor(collection) {
+				return "https://api.mongolab.com/api/1/databases/monthbook/collections/" +
+								collection + "?apiKey=" + key;
+			}
+
+			function ajaxClear(collection, callback) {
+				return {
+					url: urlFor(collection),
+					data: "[]",
+					type: "PUT",
+					contentType: "application/json",
+					success: callback
+				}
+			}
+
+			function ajaxAdd(collection, data, callback) {
+				return {
+					url: urlFor(collection),
+					data: JSON.stringify(data),
+					type: "POST",
+					contentType: "application/json",
+					success: callback
+				}
+			}
+
+			function resetCollection(name) {
+				var trigger = new $.Deferred();
+				$.ajax(ajaxClear(name, function () {
+					console.log(name + ": cleared");
+					$.get(name + ".json", function (data) {
+						$.ajax(ajaxAdd(name, data, function () {
+							console.log(name + ": filled");
+							trigger.resolve();
+						}));
+					});
+				}));
+				return trigger;
+			}
+
+			$.when(
+				resetCollection("students"),
+				resetCollection("lectors"),
+				resetCollection("lectures")
+			).done(function () {
+				console.log("all done!");
+			});
+		});
+	</script>
+</body>
+</html>

@@ -36,12 +36,12 @@ module.exports = function (grunt) {
 					dest: "<%=tgtDir%>/js/"
 				}]
 			},
-			data: {
+			dev: {
 				files: [{
 					expand: true,
-					cwd: "<%=srcDir%>/data/",
+					cwd: "<%=srcDir%>/dev/",
 					src: ["**"],
-					dest: "<%=tgtDir%>/data/"
+					dest: "<%=tgtDir%>/dev/"
 				}]
 			},
 			img: {
@@ -112,11 +112,11 @@ module.exports = function (grunt) {
 
 	grunt.registerTask("dev", [
 		"clean:target", "env:dev", "preprocess:html", "yate", "copy:yateRuntime",
-		"copy:css", "copy:js", "copy:data", "copy:img", "clean:yateobj"
+		"copy:css", "copy:js", "copy:dev", "copy:img", "clean:yateobj"
 	]);
 	grunt.registerTask("prod", [
 		"clean:target", "env:prod", "preprocess:html", "yate", "copy:yateRuntime",
-		"cssmin:css", "uglify:js", "copy:data", "copy:img", "clean:yateobj", "clean:afterProd"
+		"cssmin:css", "uglify:js", "copy:img", "clean:yateobj", "clean:afterProd"
 	]);
 };
 

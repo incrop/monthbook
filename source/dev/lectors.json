@@ -1,6 +1,6 @@
 [
 	{
-		"id":181,
+		"_id":181,
 		"native_id":47352,
 		"first_name":"Алексей",
 		"last_name":"Бережной",
@@ -9,7 +9,7 @@
 		"preview_url":"img/lectors/th-181.jpg"
 	},
 	{
-		"id":182,
+		"_id":182,
 		"native_id":143134,
 		"first_name":"Анна",
 		"last_name":"Чеботкевич",
@@ -17,7 +17,7 @@
 		"preview_url":"img/lectors/th-182.jpg"
 	},
 	{
-		"id":183,
+		"_id":183,
 		"native_id":310,
 		"first_name":"Виктор",
 		"last_name":"Ашик",
@@ -25,7 +25,7 @@
 		"preview_url":"img/lectors/th-183.jpg"
 	},
 	{
-		"id":184,
+		"_id":184,
 		"native_id":46216,
 		"first_name":"Георгий",
 		"last_name":"Мостоловица",
@@ -34,7 +34,7 @@
 		"preview_url":"img/lectors/th-184.jpg"
 	},
 	{
-		"id":185,
+		"_id":185,
 		"native_id":434,
 		"first_name":"Денис",
 		"last_name":"Бугарчев",
@@ -43,7 +43,7 @@
 		"preview_url":"img/lectors/th-185.jpg"
 	},
 	{
-		"id":186,
+		"_id":186,
 		"native_id":144389,
 		"first_name":"Дмитрий",
 		"last_name":"Поляков",
@@ -51,7 +51,7 @@
 		"preview_url":"img/lectors/th-186.jpg"
 	},
 	{
-		"id":187,
+		"_id":187,
 		"native_id":151056,
 		"first_name":"Евгений",
 		"last_name":"Дорошенко",
@@ -59,7 +59,7 @@
 		"preview_url":"img/lectors/th-187.jpg"
 	},
 	{
-		"id":188,
+		"_id":188,
 		"native_id":60778,
 		"first_name":"Игорь",
 		"last_name":"Новак",
@@ -68,7 +68,7 @@
 		"preview_url":"img/lectors/th-188.jpg"
 	},
 	{
-		"id":189,
+		"_id":189,
 		"native_id":45533,
 		"first_name":"Марина",
 		"last_name":"Широчкина",
@@ -77,7 +77,7 @@
 		"preview_url":"img/lectors/th-189.jpg"
 	},
 	{
-		"id":190,
+		"_id":190,
 		"native_id":144433,
 		"first_name":"Михаил",
 		"last_name":"Трошев",
@@ -85,7 +85,7 @@
 		"preview_url":"img/lectors/th-190.jpg"
 	},
 	{
-		"id":191,
+		"_id":191,
 		"native_id":25,
 		"first_name":"Роман",
 		"last_name":"Андриади",
@@ -94,7 +94,7 @@
 		"preview_url":"img/lectors/th-191.jpg"
 	},
 	{
-		"id":192,
+		"_id":192,
 		"native_id":380,
 		"first_name":"Сергей",
 		"last_name":"Сергеев",
@@ -103,7 +103,7 @@
 		"preview_url":"img/lectors/th-192.jpg"
 	},
 	{
-		"id":193,
+		"_id":193,
 		"native_id":144481,
 		"first_name":"Сергей",
 		"last_name":"Черкасов",
@@ -111,7 +111,7 @@
 		"preview_url":"img/lectors/th-193.jpg"
 	},
 	{
-		"id":194,
+		"_id":194,
 		"native_id":20,
 		"first_name":"Тарас",
 		"last_name":"Иващенко",
