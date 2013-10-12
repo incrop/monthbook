@@ -71,9 +71,9 @@ body {
 }
 
 .post .social a.ya       { background-position:  0px 0px; }
-.post .social a.vk       { background-position: 24px 0px; }
+.post .social a.facebook { background-position: 24px 0px; }
 .post .social a.github   { background-position: 48px 0px; }
-.post .social a.facebook { background-position: 72px 0px; }
+.post .social a.vk       { background-position: 72px 0px; }
 
 .post .avatar {
 	cursor: pointer;

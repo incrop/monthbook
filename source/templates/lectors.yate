@@ -12,7 +12,7 @@ match / {
 }
 
 match .lectors {
-	lector_id = .id
+	lector_id = ._id
 	<div class="lector post" data-id="{lector_id}">
 		<div class="left">
 			<img class="avatar">

@@ -12,7 +12,7 @@ match / {
 }
 
 match .students {
-	<div class="student post" data-id="{.id}">
+	<div class="student post" data-id="{._id}">
 		<div class="left">
 			<img class="avatar">
 				if (.expanded) {
@@ -42,7 +42,7 @@ match .students {
 			}
 		</div>
 		<div class="content">
-			<div class="caption">{.firstName} {.lastName}</div>
+			<div class="caption">{.first_name} {.last_name}</div>
 			if (.expanded) {
 				<hr/>
 				<p>{.about}</p>

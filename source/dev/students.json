@@ -1,23 +1,23 @@
 [
 	{
-		"id": 0,
-		"firstName": "Никита",
-		"lastName": "Попов",
+		"_id": 0,
+		"first_name": "Никита",
+		"last_name": "Попов",
 		"city": "Санкт-Петербург",
 		"photo": "http://cs408530.vk.me/v408530792/1e45/XISCuQa83W4.jpg",
 		"preview": "img/students/th-0.jpg",
 		"about": "О себе о себе о себе",
 		"profiles": {
-			"facebook": "facebook.com/popov.nikita",
-			"vk": "vk.com/nikita.v.popov",
-			"github": "github.com/losnikitos",
+			"facebook": "http://facebook.com/popov.nikita",
+			"vk": "http://vk.com/nikita.v.popov",
+			"github": "https://github.com/losnikitos",
 			"ya": "http://losnikitos123.ya.ru"
 		}
 	},
 	{
-		"id": 1,
-		"firstName": "Роман",
-		"lastName": "Орловский",
+		"_id": 1,
+		"first_name": "Роман",
+		"last_name": "Орловский",
 		"city": "Нижний Новгород",
 		"photo": "http://cs14115.vk.me/c315820/v315820751/33bf/zID6ILpd6L0.jpg",
 		"preview": "img/students/th-1.jpg",
@@ -29,9 +29,9 @@
 		}
 	},
 	{
-		"id": 2,
-		"firstName": "Андрей",
-		"lastName": "Морозов",
+		"_id": 2,
+		"first_name": "Андрей",
+		"last_name": "Морозов",
 		"city": "Ставрополь",
 		"photo": "http://i.imgur.com/byyMclh.jpg",
 		"preview": "img/students/th-2.jpg",
@@ -44,23 +44,23 @@
 		}
 	},
 	{
-		"id": 3,
-		"firstName": "Максим",
-		"lastName": "Попков",
+		"_id": 3,
+		"first_name": "Максим",
+		"last_name": "Попков",
 		"city": "Балашиха",
 		"photo": "http://img-fotki.yandex.ru/get/9301/35759599.0/0_9b1ec_264822bf_L.jpg",
 		"preview": "img/students/th-3.jpg",
 		"about": "С детства вожусь с техникой, слежу за прогрессом и познаю новое. Мне нравятся веб-технологии, возможность увидеть результат работы и показать его другим. Школа стала для меня вектором в саморазвитии, направляет и помогает пробиться в джунглях front-end`а.",
 		"profiles": {
-			"vk": "vk.com/dales3d",
-			"github": "github.com/maxim-popkov/",
+			"vk": "http://vk.com/dales3d",
+			"github": "https://github.com/maxim-popkov/",
 			"ya": "http://dales3d.ya.ru/"
 		}
 	},
 	{
-		"id": 4,
-		"firstName": "Алексей",
-		"lastName": "Кондратов",
+		"_id": 4,
+		"first_name": "Алексей",
+		"last_name": "Кондратов",
 		"city": "Москва",
 		"photo": "https://dl.dropboxusercontent.com/u/1122837/photo-for-shri.jpg",
 		"preview": "img/students/th-4.jpg",
@@ -73,9 +73,9 @@
 		}
 	},
 	{
-		"id": 5,
-		"firstName": "Михаил",
-		"lastName": "Шустов",
+		"_id": 5,
+		"first_name": "Михаил",
+		"last_name": "Шустов",
 		"city": "Санкт-Петербург",
 		"photo": "http://cs411121.vk.me/v411121849/4e8f/RK29XcJBwXA.jpg",
 		"preview": "img/students/th-5.jpg",
@@ -88,9 +88,9 @@
 		}
 	},
 	{
-		"id": 6,
-		"firstName": "Михаил",
-		"lastName": "Коциевский",
+		"_id": 6,
+		"first_name": "Михаил",
+		"last_name": "Коциевский",
 		"city": "Одесса",
 		"photo": "http://cs406.vk.me/u3659839/66194715/x_eb7b3905.jpg",
 		"preview": "img/students/th-6.jpg",
@@ -103,9 +103,9 @@
 		}
 	},
 	{
-		"id": 7,
-		"firstName": "Мария",
-		"lastName": "Метелёва",
+		"_id": 7,
+		"first_name": "Мария",
+		"last_name": "Метелёва",
 		"city": "Киров",
 		"photo": "http://cs309418.vk.me/v309418752/cc67/cjxo9lnG7cw.jpg",
 		"preview": "img/students/th-7.jpg",
@@ -118,9 +118,9 @@
 		}
 	},
 	{
-		"id": 8,
-		"firstName": "Сергей ",
-		"lastName": "Максимов",
+		"_id": 8,
+		"first_name": "Сергей ",
+		"last_name": "Максимов",
 		"city": "Москва",
 		"photo": "http://img-fotki.yandex.ru/get/9265/25524525.0/0_aa625_da21f6b4_L.jpg",
 		"preview": "img/students/th-8.jpg",
@@ -131,9 +131,9 @@
 		}
 	},
 	{
-		"id": 9,
-		"firstName": "София",
-		"lastName": "Павленко",
+		"_id": 9,
+		"first_name": "София",
+		"last_name": "Павленко",
 		"city": "Москва",
 		"photo": "http://img-fotki.yandex.ru/get/9114/225957471.0/0_10832e_fc57d136_XL.jpg",
 		"preview": "img/students/th-9.jpg",
@@ -146,9 +146,9 @@
 		}
 	},
 	{
-		"id": 10,
-		"firstName": "Наталия",
-		"lastName": "Смирнова",
+		"_id": 10,
+		"first_name": "Наталия",
+		"last_name": "Смирнова",
 		"city": "Иркутск",
 		"photo": "http://img-fotki.yandex.ru/get/9252/75423989.0/0_c583e_4d74f0e_L",
 		"preview": "img/students/th-10.png",
@@ -161,9 +161,9 @@
 		}
 	},
 	{
-		"id": 11,
-		"firstName": "Павел",
-		"lastName": "Мягков",
+		"_id": 11,
+		"first_name": "Павел",
+		"last_name": "Мягков",
 		"city": "Москва",
 		"photo": "http://cs408419.vk.me/v408419238/132b/p9dNxZto-Ok.jpg",
 		"preview": "img/students/th-11.jpg",
@@ -176,18 +176,18 @@
 		}
 	},
 	{
-		"id": 12,
-		"firstName": "Сергей",
-		"lastName": "Борончиев",
+		"_id": 12,
+		"first_name": "Сергей",
+		"last_name": "Борончиев",
 		"city": "Санкт-Петербург",
 		"photo": "https://dl.dropboxusercontent.com/u/1544597/boronchiev.jpg",
 		"preview": "img/students/th-12.jpg",
 		"about": "Меня зовут Сергей Борончиев (профиль на moikrug.ru). Я из Санкт-Петербурга, последние полтора года живу и работаю в Москве.\n\nВ 2007 году, когда я только начинал интересоваться веб-разработкой, побывал на третьей открытой встрече сообщества «Веб-стандарты» и решил, что хочу развиваться во фронтэнд-направлении. Читал много книг и тематических блогов, верстал свои первые сайты. Не застал IE5.5, но на поддержке IE6 закалился. Сделал настольной книгу с рыбами, книгу с носорогом откладывал до недавнего времени.\n\nС '09 по '12 годы я работал в небольших петербургских веб-студиях: верстал несложные сайты и программировал модули для популярных CMS, параллельно попробовал себя во всех смежных областях – от аналитики до интернет-рекламы.\n\nВ 2012 меня пригласили работать в LiveJournal (SUP Media) в качестве верстальщика. Я занимался версткой новых нежурнальных сервисов и поддержкой существующих. Последние полгода я руковожу одной из групп разработки ЖЖ.\n\nПоставил цель – развиться в комплексного фронтендера – разбираюсь с JS, интересуюсь методами повышения эффективности командной работы и управлением проектами. Коллеги, выпускники прошлого года, рекомендовали ШРИ, как отличный интенсив, охватывающий все аспекты разработки."
 	},
 	{
-		"id": 13,
-		"firstName": "Александр",
-		"lastName": "Нефедов",
+		"_id": 13,
+		"first_name": "Александр",
+		"last_name": "Нефедов",
 		"city": "Ярославль",
 		"photo": "http://cs9255.vk.me/u1079690/105302838/x_5d23974b.jpg",
 		"preview": "img/students/th-13.jpg",
@@ -200,9 +200,9 @@
 		}
 	},
 	{
-		"id": 14,
-		"firstName": "Дмитрий",
-		"lastName": "Душкин",
+		"_id": 14,
+		"first_name": "Дмитрий",
+		"last_name": "Душкин",
 		"city": "Электросталь",
 		"photo": "http://img-fotki.yandex.ru/get/9250/43146692.0/0_fdbcf_ac23f232_L",
 		"preview": "img/students/th-14.jpg",
@@ -213,9 +213,9 @@
 		}
 	},
 	{
-		"id": 15,
-		"firstName": "Анна",
-		"lastName": "Минаева",
+		"_id": 15,
+		"first_name": "Анна",
+		"last_name": "Минаева",
 		"city": "Москва",
 		"photo": "http://img-fotki.yandex.ru/get/9557/225755747.0/0_f4b79_54a022b5_L.jpg",
 		"preview": "img/students/th-15.jpg",
@@ -227,9 +227,9 @@
 		}
 	},
 	{
-		"id": 16,
-		"firstName": "Евгения",
-		"lastName": "Костенко",
+		"_id": 16,
+		"first_name": "Евгения",
+		"last_name": "Костенко",
 		"city": "Москва",
 		"photo": "http://cs402119.vk.me/v402119174/5a5/O3C6sv2KgPM.jpg",
 		"preview": "img/students/th-16.jpg",
@@ -242,9 +242,9 @@
 		}
 	},
 	{
-		"id": 17,
-		"firstName": "Марина",
-		"lastName": "Акимова",
+		"_id": 17,
+		"first_name": "Марина",
+		"last_name": "Акимова",
 		"city": "Москва",
 		"photo": "http://img-fotki.yandex.ru/get/9265/93452933.0/0_f4f56_95ad678b_M.jpg",
 		"preview": "img/students/th-17.jpg",
@@ -256,9 +256,9 @@
 		}
 	},
 	{
-		"id": 18,
-		"firstName": "Асхат",
-		"lastName": "Нуриддинов",
+		"_id": 18,
+		"first_name": "Асхат",
+		"last_name": "Нуриддинов",
 		"city": "Москва",
 		"photo": "http://cs316125.vk.me/v316125448/2b1a/Oc1vP_ex1Kk.jpg",
 		"preview": "img/students/th-18.jpg",
@@ -270,9 +270,9 @@
 		}
 	},
 	{
-		"id": 19,
-		"firstName": "Иван",
-		"lastName": "Полюхович",
+		"_id": 19,
+		"first_name": "Иван",
+		"last_name": "Полюхович",
 		"city": "Ярославль",
 		"photo": "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-prn2/1235040_10202050873057445_1771012697_n.jpg",
 		"preview": "img/students/th-19.jpg",
@@ -285,9 +285,9 @@
 		}
 	},
 	{
-		"id": 20,
-		"firstName": "Яна",
-		"lastName": "Манухина",
+		"_id": 20,
+		"first_name": "Яна",
+		"last_name": "Манухина",
 		"city": "Москва",
 		"photo": "http://www.birdie.ru/photo/miscellaneous/yanka-300x450px.jpg",
 		"preview": "img/students/th-20.jpg",
@@ -300,9 +300,9 @@
 		}
 	},
 	{
-		"id": 21,
-		"firstName": "Максим",
-		"lastName": "Мялин",
+		"_id": 21,
+		"first_name": "Максим",
+		"last_name": "Мялин",
 		"city": "Зеленоград",
 		"photo": "http://img-fotki.yandex.ru/get/5006/159040040.0/0_c98cf_4367914d_L.jpg",
 		"preview": "img/students/th-21.jpg",
@@ -314,9 +314,9 @@
 		}
 	},
 	{
-		"id": 23,
-		"firstName": "Сергей",
-		"lastName": "Попов",
+		"_id": 23,
+		"first_name": "Сергей",
+		"last_name": "Попов",
 		"city": "Москва",
 		"photo": "http://img-fotki.yandex.ru/get/9360/38786.0/0_9aeef_251f458a_L",
 		"preview": "img/students/th-23.jpg",
@@ -329,9 +329,9 @@
 		}
 	},
 	{
-		"id": 24,
-		"firstName": "Василий",
-		"lastName": "Логиневский",
+		"_id": 24,
+		"first_name": "Василий",
+		"last_name": "Логиневский",
 		"city": "Москва",
 		"photo": "http://img-fotki.yandex.ru/get/9110/29991134.0/0_d32e8_fc889efd_L.jpg",
 		"preview": "img/students/th-24.jpg",
@@ -344,9 +344,9 @@
 		}
 	},
 	{
-		"id": 25,
-		"firstName": "Дмитрий",
-		"lastName": "Старостин",
+		"_id": 25,
+		"first_name": "Дмитрий",
+		"last_name": "Старостин",
 		"city": "Железнодорожный, Московская Область",
 		"photo": "http://img-fotki.yandex.ru/get/9324/225901897.0/0_eed19_e18ec644_M",
 		"preview": "img/students/th-25.jpg",
@@ -358,24 +358,22 @@
 		}
 	},
 	{
-		"id": 26,
-		"firstName": "Василий",
-		"lastName": "Стяжкин",
+		"_id": 26,
+		"first_name": "Василий",
+		"last_name": "Стяжкин",
 		"city": "Москва",
 		"photo": "http://img-fotki.yandex.ru/get/5000/224875572.0/0_d576d_79049da1_L",
 		"preview": "img/students/th-26.jpg",
 		"about": "Приветствую.\nМне 23 года, около 20-ти из которых я провел примерно здесь .\n\"Hello World!\" написал сам того не зная еще на ZX Spectrum, но гик из меня не получился (и я, признаться, этому рад). \nУчился в Архангельском Музыкальном Училище на джаззовом отделении. Травма руки это исправила. Спустя некоторое время решил просвещаться в IT. Поработал в тех-поддержке провайдера (привет Уральский). Потратив много свободного времени на освоение html/css, убежал в обслуживание интернет магазинов, где исправлял кучу кода, который никогда не должен был рождаться, отбил сотни глупых желаний заказчиков. Стало очевидно - я не хочу пополнять ряды \"веб-дестроеров\" (привет с YaC'a)\nО Школе узнал в процессе поиска обучающих материалов. Через пару месяцев после переезда из Спб в Москву узнал, что в этом году я прибыл в нужное место.\nСпасибо за возможность реализовать свои планы и указание верного направления.",
 		"profiles": {
-			"facebook": "--",
-			"vk": "--",
 			"github": "https://github.com/vasyan",
 			"ya": "http://vasilyator9000.ya.ru/"
 		}
 	},
 	{
-		"id": 27,
-		"firstName": "Арменуи",
-		"lastName": "Паглеванян",
+		"_id": 27,
+		"first_name": "Арменуи",
+		"last_name": "Паглеванян",
 		"city": "Пенза",
 		"photo": "http://moikrug.ru/avatar/mk-p/638914248/portrait.png?modified=1380227679",
 		"preview": "img/students/th-27.jpg",
@@ -388,9 +386,9 @@
 		}
 	},
 	{
-		"id": 28,
-		"firstName": "Антон",
-		"lastName": "Кузнецов",
+		"_id": 28,
+		"first_name": "Антон",
+		"last_name": "Кузнецов",
 		"city": "Иваново",
 		"photo": "http://img-fotki.yandex.ru/get/9511/33991531.0/0_aa0ce_77bf55b7_M",
 		"preview": "img/students/th-28.jpg",
@@ -398,14 +396,14 @@
 		"profiles": {
 			"facebook": "https://www.facebook.com/isnifee",
 			"vk": "http://vk.com/isnifer",
-			"github": "http://github.com/isnifer",
+			"github": "https://github.com/isnifer",
 			"ya": "http://isnifer.ya.ru/"
 		}
 	},
 	{
-		"id": 29,
-		"firstName": "Михаил",
-		"lastName": "Мокрушин",
+		"_id": 29,
+		"first_name": "Михаил",
+		"last_name": "Мокрушин",
 		"city": "Ижевск",
 		"photo": "http://cs316317.vk.me/v316317272/4617/R-BmcMks4vI.jpg",
 		"preview": "img/students/th-29.jpg",
