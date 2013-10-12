@@ -1,0 +1,107 @@
+* {
+	font-family: Helvetica, Arial;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #fff;
+}
+
+#wrapper {
+	width: 980px;
+	margin: 0 auto;
+}
+
+.nav {
+	font-weight: bold;
+}
+
+.nav ul {
+	list-style-type: none;
+}
+
+.nav ul li {
+	display: inline;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+.nav ul li a {
+	text-decoration: none;
+	color: black;
+}
+.nav ul li a:hover {
+	color: red;
+}
+
+.nav, .post {
+	border: solid 1px;
+	background-color: #eee;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.header {
+	padding: 10px;
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.post .left {
+	float: left;
+}
+
+.post .social {
+	width: 250px;
+	text-align: left;
+}
+
+.post .social a {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-top: 5px;
+	margin-right: 10px;
+	outline: none;
+	border-style: none;
+	background-image: url('../img/social.png');
+}
+
+.post .social a.ya       { background-position:  0px 0px; }
+.post .social a.facebook { background-position: 24px 0px; }
+.post .social a.github   { background-position: 48px 0px; }
+.post .social a.vk       { background-position: 72px 0px; }
+
+.post .avatar {
+	cursor: pointer;
+}
+
+.post .content {
+	float: none;
+	width: auto;
+	overflow: hidden;
+	padding-left: 10px;
+}
+
+.post {
+	height: auto;
+	overflow: hidden;
+}
+
+.post .caption {
+	line-height: 30px;
+	padding: 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.post .caption:first-letter {
+	color: red;
+}
+
+.post p {
+	padding: 10px;
+}
