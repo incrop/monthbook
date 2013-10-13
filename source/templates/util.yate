@@ -6,6 +6,7 @@ func header(caption, buttonCaption) {
 		if (buttonCaption) {
 			<a href="#" class="button new">{buttonCaption}</a>
 		}
+		<img style="display:none;" class="loader" src="img/ajax-loader.gif"/>
 	</div>
 }
 
