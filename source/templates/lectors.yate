@@ -6,14 +6,14 @@ match / {
 	if (.single) {
 		apply .lectors
 	} else {
-		header("Список лекторов")
+		header("Список лекторов", "Добавить")
 		for .lectors {
 			apply .
 		}
 	}
 }
 
-match .lectors {
+match .lectors[!.edit] {
 	lector_id = ._id.*[name() == "$oid"]
 	<div class="lector post" data-cid="{.cid}">
 		<div class="left">
@@ -33,11 +33,15 @@ match .lectors {
 				<div class="caption fold-handle">{.first_name} {.last_name}</div>
 			</div>
 			if (.expanded) {
+				<hr/>
+				if (.native_id) {
+					url = "http://tech.yandex.ru/people/{.native_id}/"
+					<p>Cсылка на профиль в Яндексе: <a href="{url}">{url}</a></p>
+				}
 				if (.about) {
-					<hr/>
 					<p>{.about}</p>
 				}
-				lector_lectures = ..lectures //[.lector_id == lector_id]
+				lector_lectures = ..lectures[.lector_id == lector_id]
 				if (lector_lectures) {
 					<hr/>
 					<div class="caption-wrapper">
@@ -50,7 +54,55 @@ match .lectors {
 						</p>
 					}
 				}
-			}			
+				<hr/>
+				<div class="float-wrapper">
+					<a class="button delete" href="#">Удалить</a>
+					<a class="button edit" href="#">Изменить</a>
+					<img style="display:none;" class="loader" src="img/ajax-loader-gray.gif"/>
+				</div>
+			}
 		</div>
+	</div>
+}
+
+match .lectors[.edit] {
+	<div class="lector post" data-cid="{.cid}">
+		<form class="edit-form">
+			lector_id = ._id.*[name() == "$oid"]
+			if (lector_id) {
+				<input type="hidden" name="_id[$oid]" value="{lector_id}"/>
+			}
+			<input type="hidden" name="cid" value="{.cid}"/>
+			<table>
+				<tbody>
+					<tr>
+						<td>Имя:</td>
+						<td><input type="text" name="first_name" value="{.first_name}"/></td>
+					</tr>
+					<tr>
+						<td>Фамилия:</td>
+						<td><input type="text" name="last_name" value="{.last_name}"/></td>
+					</tr>
+					<tr>
+						<td>tech.yandex.ru ID:</td>
+						<td><input type="text" name="native_id" value="{.native_id}"/></td>
+					</tr>
+					<tr>
+						<td>Ссылка на аватар:</td>
+						<td><input type="text" name="photo_url" value="{.photo_url}"/></td>
+					</tr>
+					<tr>
+						<td>Ссылка на превью:</td>
+						<td><input type="text" name="preview_url" value="{.preview_url}"/></td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<div class="float-wrapper">
+				<a class="button cancel" href="#">Отмена</a>
+				<input class="button submit" type="submit" value="Сохранить"/>
+				<img style="display:none;" class="loader" src="img/ajax-loader-gray.gif"/>
+			</div>
+		</form>
 	</div>
 }

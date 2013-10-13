@@ -25,11 +25,11 @@ match .students[!.edit] {
 			<img class="avatar fold-handle">
 				if (.expanded) {
 					@width = 250 
-					@src = .photo
+					@src = .photo_url
 				} else {
 					@height = 50
 					@width = 50
-					@src = .preview
+					@src = .preview_url
 				}
 			</img>
 		</div>
@@ -48,13 +48,16 @@ match .students[!.edit] {
 			if (.expanded) {
 				<hr/>
 				if (.city) {
-					<div class="city">Родной город: {.city}</div>
+					<p>Родной город: {.city}</p>
 				}
-				<p>{.about}</p>
+				if (.about) {
+					<p>{.about}</p>
+				}
 				<hr/>
 				<div class="float-wrapper">
 					<a class="button delete" href="#">Удалить</a>
 					<a class="button edit" href="#">Изменить</a>
+					<img style="display:none;" class="loader" src="img/ajax-loader-gray.gif"/>
 				</div>
 			}
 		</div>
@@ -63,7 +66,7 @@ match .students[!.edit] {
 
 match .students[.edit] {
 	<div class="student post" data-cid="{.cid}">
-		<form class="student-form">
+		<form class="edit-form">
 			id = ._id.*[name() == "$oid"]
 			if (id) {
 				<input type="hidden" name="_id[$oid]" value="{id}"/>
@@ -85,11 +88,11 @@ match .students[.edit] {
 					</tr>
 					<tr>
 						<td>Ссылка на аватар:</td>
-						<td><input type="text" name="photo" value="{.photo}"/></td>
+						<td><input type="text" name="photo_url" value="{.photo_url}"/></td>
 					</tr>
 					<tr>
 						<td>Ссылка на превью:</td>
-						<td><input type="text" name="preview" value="{.preview}"/></td>
+						<td><input type="text" name="preview_url" value="{.preview_url}"/></td>
 					</tr>
 					<tr>
 						<td>О себе:</td>
@@ -117,6 +120,7 @@ match .students[.edit] {
 			<div class="float-wrapper">
 				<a class="button cancel" href="#">Отмена</a>
 				<input class="button submit" type="submit" value="Сохранить"/>
+				<img style="display:none;" class="loader" src="img/ajax-loader-gray.gif"/>
 			</div>
 		</form>
 	</div>
