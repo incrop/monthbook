@@ -4,3 +4,4 @@
 node_modules/
 tmp/
 target/
+source/templates/*.obj

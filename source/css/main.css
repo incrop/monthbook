@@ -23,8 +23,7 @@ body {
 
 .nav ul li {
 	display: inline;
-	margin-right: 40px;
-	margin-left: 40px;
+	margin-right: 80px;
 }
 
 .nav ul li a {
@@ -38,16 +37,52 @@ body {
 .nav, .post {
 	border: solid 1px;
 	background-color: #eee;
-	border-radius: 10px;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding: 10px;
+}
+
+.float-wrapper {
+	overflow: auto;
 }
 
 .header {
 	padding: 10px;
 	font-size: 150%;
 	font-weight: bold;
+	float: left;
+	display: inline-block;
+}
+
+.float-wrapper .button {
+	float: right;
+	display: inline-block;
+	text-decoration: none;
+	padding: 6px 12px 6px 12px;
+	border: 1px solid black;
+	color: black;
+	background-color: #eee;
+	border-radius: 8px;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 100%;
+}
+.float-wrapper .button:hover {
+	background-color: #ccc;
+}
+.float-wrapper .button.inactive {
+	color: #999;
+	border-color: #999;
+	cursor: default;
+}
+.float-wrapper .button.inactive:hover {
+	background-color: #eee;
 }
 
 .post .left {
@@ -97,6 +132,7 @@ body {
 	height: 24px;
 	display: inline-block;
 	margin-left: 10px;
+	margin-top: 5px;
 	outline: none;
 	border-style: none;
 	background-image: url('../img/social.png');
@@ -107,6 +143,29 @@ body {
 .post .social a.github   { background-position: 48px 0px; }
 .post .social a.vk       { background-position: 72px 0px; }
 
+.post .city {
+	padding: 10px;
+}
+
 .post p {
 	padding: 10px;
 }
+
+.post td {
+	padding: 10px;
+}
+
+.post td input[type="text"] {
+	height: 20px;
+	width: 750px;
+}
+
+.post td textarea {
+	resize: none;
+	width: 750px;
+}
+
+.post td:first-child {
+	font-weight: bold;
+}
+

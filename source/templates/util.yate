@@ -1,0 +1,15 @@
+module "util"
+
+func header(caption, buttonCaption) {
+	<div class="float-wrapper">
+		<div class="header">{caption}</div>
+		if (buttonCaption) {
+			<a href="#" class="button new">{buttonCaption}</a>
+		}
+	</div>
+}
+
+func post_caption(caption) {
+
+}
+
