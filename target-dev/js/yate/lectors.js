@@ -20,6 +20,28 @@ var yr = yr || require('yate/lib/runtime.js');
 
     var M = new yr.Module();
 
+    // func header(caption, buttonCaption) : xml
+    M.f2 = function f2(m, c0, i0, l0, a0, v3, v4) {
+        var r0 = '';
+
+        r0 += closeAttrs(a0);
+        r0 += "<div class=\"" + "float-wrapper" + "\">";
+        r0 += "<div class=\"" + "header" + "\">" + scalar2xml( ( v3 ) ) + "</div>";
+        if ((v4)) {
+            r0 += "<a href=\"" + "#" + "\" class=\"" + "button new" + "\">" + scalar2xml( ( v4 ) ) + "</a>";
+        }
+        r0 += "</div>";
+
+        return r0;
+    };
+
+    // func post_caption(caption) : scalar
+    M.f3 = function f3(m, c0, i0, l0, v5) {
+        var r0 = '';
+
+        return r0;
+    };
+
     var j1 = [ ];
 
     var j2 = [ 0, 'lectors' ];
@@ -27,8 +49,6 @@ var yr = yr || require('yate/lib/runtime.js');
     var j3 = [ 1, 0 ];
 
     var j4 = [ 0, 'single' ];
-
-    var j5 = [ 0, '_id' ];
 
     var j6 = [ 0, 'preview_url' ];
 
@@ -56,7 +76,7 @@ var yr = yr || require('yate/lib/runtime.js');
             r0 += m.a(m, selectNametest('lectors', c0, []), '', a0)
         } else {
             r0 += closeAttrs(a0);
-            r0 += "<div class=\"" + "header" + "\">" + "Список лекторов" + "</div>";
+            r0 += m.f('f2', c0, i0, l0, a0, "Список лекторов");
             var items0 = selectNametest('lectors', c0, []);
             for (var i1 = 0, l1 = items0.length; i1 < l1; i1++) {
                 var c1 = items0[ i1 ];
@@ -73,17 +93,23 @@ var yr = yr || require('yate/lib/runtime.js');
     M.t2 = function t2(m, c0, i0, l0, a0) {
         var r0 = '';
 
-        //  var lector_id : nodeset
-        var v0 = selectNametest('_id', c0, []);
-
         function p0(m, c0, i0, l0) {
-            return cmpNN(selectNametest('lector_id', c0, []), v0);
+            return c0.name == "$oid";
         }
 
-        var j12 = [ 1, 1, 0, 'lectures', 2, p0 ];
+        var j5 = [ 0, '_id', 0, '*', 2, p0 ];
+
+        //  var lector_id : nodeset
+        var v6 = m.s(j5, c0);
+
+        function p1(m, c0, i0, l0) {
+            return cmpNN(selectNametest('lector_id', c0, []), v6);
+        }
+
+        var j12 = [ 1, 1, 0, 'lectures', 2, p1 ];
 
         r0 += closeAttrs(a0);
-        r0 += "<div class=\"" + "lector post" + "\" data-id=\"" + nodeset2attrvalue( ( v0 ) ) + "\">";
+        r0 += "<div class=\"" + "lector post" + "\" data-id=\"" + nodeset2attrvalue( ( v6 ) ) + "\">";
         r0 += "<div class=\"" + "left" + "\">";
         r0 += "<img";
         a0.a = {
@@ -102,19 +128,21 @@ var yr = yr || require('yate/lib/runtime.js');
         r0 += '';
         r0 += "</div>";
         r0 += "<div class=\"" + "content" + "\">";
+        r0 += "<div class=\"" + "caption-wrapper" + "\">";
         r0 += "<div class=\"" + "caption" + "\">" + nodeset2xml( ( selectNametest('first_name', c0, []) ) ) + " " + nodeset2xml( ( selectNametest('last_name', c0, []) ) ) + "</div>";
+        r0 += "</div>";
         if (nodeset2boolean( (selectNametest('expanded', c0, [])) )) {
             //  var lector_lectures : nodeset
-            var v1 = m.s(j12, c0);
+            var v7 = m.s(j12, c0);
 
             if (nodeset2boolean( (selectNametest('about', c0, [])) )) {
                 r0 += "<hr/>";
                 r0 += "<p>" + nodeset2xml( ( selectNametest('about', c0, []) ) ) + "</p>";
             }
-            if (nodeset2boolean( (v1) )) {
+            if (nodeset2boolean( (v7) )) {
                 r0 += "<hr/>";
                 r0 += "<div class=\"" + "caption" + "\">" + "Лекции:" + "</div>";
-                var items0 = v1;
+                var items0 = v7;
                 for (var i1 = 0, l1 = items0.length; i1 < l1; i1++) {
                     var c1 = items0[ i1 ];
                     r0 += "<p>";

@@ -20,6 +20,28 @@ var yr = yr || require('yate/lib/runtime.js');
 
     var M = new yr.Module();
 
+    // func header(caption, buttonCaption) : xml
+    M.f0 = function f0(m, c0, i0, l0, a0, v0, v1) {
+        var r0 = '';
+
+        r0 += closeAttrs(a0);
+        r0 += "<div class=\"" + "float-wrapper" + "\">";
+        r0 += "<div class=\"" + "header" + "\">" + scalar2xml( ( v0 ) ) + "</div>";
+        if ((v1)) {
+            r0 += "<a href=\"" + "#" + "\" class=\"" + "button new" + "\">" + scalar2xml( ( v1 ) ) + "</a>";
+        }
+        r0 += "</div>";
+
+        return r0;
+    };
+
+    // func post_caption(caption) : scalar
+    M.f1 = function f1(m, c0, i0, l0, v2) {
+        var r0 = '';
+
+        return r0;
+    };
+
     var j0 = [ ];
 
     // match /
@@ -27,7 +49,7 @@ var yr = yr || require('yate/lib/runtime.js');
         var r0 = '';
 
         r0 += closeAttrs(a0);
-        r0 += "<div class=\"" + "header" + "\">" + "О школе" + "</div>";
+        r0 += m.f('f0', c0, i0, l0, a0, "О школе");
         r0 += "<div class=\"" + "post" + "\">";
         r0 += "<p>";
         r0 += "Школа разработки интерфейсов (ШРИ) организована";
