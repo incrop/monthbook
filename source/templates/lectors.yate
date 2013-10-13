@@ -1,10 +1,12 @@
 module "lectors"
 
+include "util.yate"
+
 match / {
 	if (.single) {
 		apply .lectors
 	} else {
-		<div class="header">Список лекторов</div>
+		header("Список лекторов")
 		for .lectors {
 			apply .
 		}
@@ -12,7 +14,7 @@ match / {
 }
 
 match .lectors {
-	lector_id = ._id
+	lector_id = ._id.*[name() == "$oid"]
 	<div class="lector post" data-id="{lector_id}">
 		<div class="left">
 			<img class="avatar">
@@ -27,7 +29,9 @@ match .lectors {
 			</img>
 		</div>
 		<div class="content">
-			<div class="caption">{.first_name} {.last_name}</div>
+			<div class="caption-wrapper">
+				<div class="caption">{.first_name} {.last_name}</div>
+			</div>
 			if (.expanded) {
 				if (.about) {
 					<hr/>

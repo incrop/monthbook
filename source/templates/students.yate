@@ -1,18 +1,26 @@
 module "students"
 
+include "util.yate"
+
 match / {
 	if (.single) {
 		apply .students
 	} else {
-		<div class="header">Список учащихся</div>
+		header("Список учащихся", "Добавить")
 		for .students {
 			apply .
 		}
 	}
 }
 
-match .students {
-	<div class="student post" data-id="{._id}">
+match .students[!.edit] {
+	func sn_icon(sn_name) {
+		sn_url = .profiles.*[name() == sn_name]
+		if (sn_url) {
+			<a class="{sn_name}" href="{sn_url}"></a>
+		}
+	}
+	<div class="student post" data-cid="{.cid}">
 		<div class="left">
 			<img class="avatar">
 				if (.expanded) {
@@ -24,12 +32,6 @@ match .students {
 					@src = .preview
 				}
 			</img>
-			func sn_icon(sn_name) {
-				sn_url = .profiles.*[name() == sn_name]
-				if (sn_url) {
-					<a class="{sn_name}" href="{sn_url}"></a>
-				}
-			}
 		</div>
 		<div class="content">
 			<div class="caption-wrapper">
@@ -45,8 +47,77 @@ match .students {
 			</div>
 			if (.expanded) {
 				<hr/>
+				if (.city) {
+					<div class="city">Родной город: {.city}</div>
+				}
 				<p>{.about}</p>
+				<hr/>
+				<div class="float-wrapper">
+					<a class="button delete" href="#">Удалить</a>
+					<a class="button edit" href="#">Изменить</a>
+				</div>
 			}
 		</div>
+	</div>
+}
+
+match .students[.edit] {
+	<div class="student post" data-cid="{.cid}">
+		<form class="student-form">
+			id = ._id.*[name() == "$oid"]
+			if (id) {
+				<input type="hidden" name="_id[$oid]" value="{id}"/>
+			}
+			<input type="hidden" name="cid" value="{.cid}"/>
+			<table>
+				<tbody>
+					<tr>
+						<td>Имя:</td>
+						<td><input type="text" name="first_name" value="{.first_name}"/></td>
+					</tr>
+					<tr>
+						<td>Фамилия:</td>
+						<td><input type="text" name="last_name" value="{.last_name}"/></td>
+					</tr>
+					<tr>
+						<td>Родной город:</td>
+						<td><input type="text" name="city" value="{.city}"/></td>
+					</tr>
+					<tr>
+						<td>Ссылка на аватар:</td>
+						<td><input type="text" name="photo" value="{.photo}"/></td>
+					</tr>
+					<tr>
+						<td>Ссылка на превью:</td>
+						<td><input type="text" name="preview" value="{.preview}"/></td>
+					</tr>
+					<tr>
+						<td>О себе:</td>
+						<td><textarea rows="6" name="about">{.about}</textarea></td>
+					</tr>
+					<tr>
+						<td>Я.ру:</td>
+						<td><input type="text" name="profiles[ya]" value="{.profiles.ya}"/></td>
+					</tr>
+					<tr>
+						<td>Вконтакте:</td>
+						<td><input type="text" name="profiles[vk]" value="{.profiles.vk}"/></td>
+					</tr>
+					<tr>
+						<td>Facebook:</td>
+						<td><input type="text" name="profiles[facebook]" value="{.profiles.facebook}"/></td>
+					</tr>
+					<tr>
+						<td>GitHub:</td>
+						<td><input type="text" name="profiles[github]" value="{.profiles.github}"/></td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<div class="float-wrapper">
+				<a class="button cancel" href="#">Отмена</a>
+				<input class="button submit" type="submit" value="Сохранить"/>
+			</div>
+		</form>
 	</div>
 }

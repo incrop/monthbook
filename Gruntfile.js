@@ -72,10 +72,10 @@ module.exports = function (grunt) {
 				src: [
 					"<%=srcDir%>/js/jquery-1.10.2.js",
 					"<%=srcDir%>/js/json2.js",
+					"<%=srcDir%>/js/jquery.serializeJSON.js",
 					"<%=srcDir%>/js/underscore.js",
 					"<%=srcDir%>/js/backbone.js",
 					"<%=srcDir%>/js/*",
-
 					"<%=tgtDir%>/js/yate/runtime.js",
 					"<%=tgtDir%>/js/yate/*.js",
 					"!<%=tgtDir%>/js/app.min.js"

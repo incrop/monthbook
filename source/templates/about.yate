@@ -1,7 +1,9 @@
 module "about"
 
+include "util.yate"
+
 match / {
-	<div class="header">О школе</div>
+	header("О школе")
 	<div class="post">
 		<p>
 			"Школа разработки интерфейсов (ШРИ) организована"
