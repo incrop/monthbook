@@ -19,8 +19,8 @@ git stash
 git checkout gh-pages
 git stash pop
 rm -rf target-*
-mv dev target-dev
-mv prod target-prod
+git mv dev target-dev
+git mv prod target-prod
 git add .
 git commit -m "release version $1"
 git checkout master

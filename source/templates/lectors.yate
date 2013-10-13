@@ -15,9 +15,9 @@ match / {
 
 match .lectors {
 	lector_id = ._id.*[name() == "$oid"]
-	<div class="lector post" data-id="{lector_id}">
+	<div class="lector post" data-cid="{.cid}">
 		<div class="left">
-			<img class="avatar">
+			<img class="avatar fold-handle">
 				if (.expanded) {
 					@width = 250
 					@src = .photo_url
@@ -30,17 +30,19 @@ match .lectors {
 		</div>
 		<div class="content">
 			<div class="caption-wrapper">
-				<div class="caption">{.first_name} {.last_name}</div>
+				<div class="caption fold-handle">{.first_name} {.last_name}</div>
 			</div>
 			if (.expanded) {
 				if (.about) {
 					<hr/>
 					<p>{.about}</p>
 				}
-				lector_lectures = ..lectures[.lector_id == lector_id]
+				lector_lectures = ..lectures //[.lector_id == lector_id]
 				if (lector_lectures) {
 					<hr/>
-					<div class="caption">Лекции:</div>
+					<div class="caption-wrapper">
+						<div class="caption">Лекции:</div>
+					</div>
 					for lector_lectures {
 						<p>
 							"{.name}: "

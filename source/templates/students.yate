@@ -22,7 +22,7 @@ match .students[!.edit] {
 	}
 	<div class="student post" data-cid="{.cid}">
 		<div class="left">
-			<img class="avatar">
+			<img class="avatar fold-handle">
 				if (.expanded) {
 					@width = 250 
 					@src = .photo
@@ -35,7 +35,7 @@ match .students[!.edit] {
 		</div>
 		<div class="content">
 			<div class="caption-wrapper">
-				<div class="caption">{.first_name} {.last_name}</div>
+				<div class="caption fold-handle">{.first_name} {.last_name}</div>
 				if (.profiles) {
 					<div class="social">
 						sn_icon("ya")
