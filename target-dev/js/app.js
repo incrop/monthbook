@@ -29,10 +29,11 @@ $(function () {
 	var AboutView = Backbone.View.extend({
 		render: function () {
 			this.$el.html(yr.run("about", {}));
-			$("#page").replaceWith(this.$el);
+			$("#page").children().hide();
+			this.$el.show();
 		},
 		initialize: function () {
-			this.$el.attr("id", "page");
+			this.$el.hide().appendTo($("#page"));
 		}
 	});
 
@@ -67,6 +68,15 @@ $(function () {
 	var BaseCollection = Backbone.Collection.extend({
 		url: function () {
 			return this.model.prototype.mongoCollection;
+		},
+		comparator: function (a, b) {
+			var al = a.get("last_name"), bl = b.get("last_name")
+			if (al < bl) return -1;
+			if (al > bl) return 1;
+			var af = a.get("first_name"), bf = b.get("first_name")
+			if (af < bf) return -1;
+			if (af > bf) return 1;
+			return 0;
 		}
 	});
 
@@ -84,7 +94,7 @@ $(function () {
 			"click .new":               "newItem",
 			"click .edit":              "editItem",
 			"click .cancel":            "cancelEdit",
-			"submit .student-form":     "saveItem",
+			"submit .edit-form":        "saveItem",
 			"click .delete":            "deleteItem"
 		},
 		toggleItem: function (ev) {
@@ -92,7 +102,6 @@ $(function () {
 			this.collection.get(cid).toggle();
 		},
 		initialize: function () {
-			this.$el.attr("id", "page");
 			var self = this;
 			this.collection.on("change", function (model) {
 				var data = model.toJSON();
@@ -102,18 +111,25 @@ $(function () {
 								self.modelRenderData(model)
 						));
 			});
+			this.$el.hide().appendTo($("#page"));
 		},
 		fetchData: function () {
 			return this.collection.fetch();
 		},
 		render: function () {
 			var self = this;
-			this.fetchData().done(function(a) {
+			self.$el.html(yr.run(
+					self.templatingModule,
+					self.collectionRenderData()
+			));
+			this.$el.children(":first").find(".loader").show();
+			$("#page").children().hide();
+			this.$el.show();
+			this.fetchData().done(function() {
 				self.$el.html(yr.run(
 						self.templatingModule,
 						self.collectionRenderData()
 				));
-				$("#page").replaceWith(self.$el);
 			});
 		},
 		newItem: function (ev) {
@@ -137,6 +153,7 @@ $(function () {
 			var self = this;
 			var data = $(ev.currentTarget).serializeJSON();
 			var model = this.collection.get(data.cid);
+			self.$el.children("[data-cid='" + model.cid + "']").find(".loader").show();
 			model.save(data, {
 				cleanup: true,
 				success: function (model) {
@@ -146,9 +163,6 @@ $(function () {
 					}
 					model.set("edit", false);
 					model.set("expanded", true);
-				},
-				error: function() {
-					alert("error!");
 				}
 			});
 			return false;
@@ -169,6 +183,7 @@ $(function () {
 			var self = this;
 			var modelElem = $(ev.currentTarget).closest(".post");
 			var model = this.collection.get(modelElem.data("cid"));
+			self.$el.children("[data-cid='" + model.cid + "']").find(".loader").show();
 			model.destroy({
 				success:function () {
 					self.collection.remove(model);
@@ -214,7 +229,7 @@ $(function () {
 
 	var LectorListView = BaseListView.extend({
 		templatingModule: "lectors",
-		ModelClass: Student,
+		ModelClass: Lector,
 		lectures: new LectureList(),
 		modelRenderData: function (model) {
 			return {
@@ -238,27 +253,32 @@ $(function () {
 	});
 
 	var aboutView = new AboutView();
-	_.bindAll(aboutView, "render");
-
 	var studentListView = new StudentListView({
 		collection: new StudentList()
 	});
-	_.bindAll(studentListView, "render");
-
+	studentListView.render();
 	var lectorListView = new LectorListView({
-		collection: new LectorList(),
+		collection: new LectorList()
 	});
-	_.bindAll(lectorListView, "render");
 
 	var Router = Backbone.Router.extend({
 		routes: {
-			"":             aboutView.render,
-			"students":     studentListView.render,
-			"lectors":      lectorListView.render
+			"":         "about",
+			"students": "students",
+			"lectors":  "lectors"
 		}
 	});
 
 	var router = new Router();
+	router.on("route:about", function () {
+		aboutView.render();
+	});
+	router.on("route:students", function () {
+		studentListView.render();
+	});
+	router.on("route:lectors", function () {
+		lectorListView.render();
+	});
 
 	Backbone.history.start();
 });

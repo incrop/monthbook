@@ -85,6 +85,11 @@ body {
 	background-color: #eee;
 }
 
+.float-wrapper .loader {
+	float: right;
+	margin-top: 13px;
+}
+
 .post .left {
 	float: left;
 }
@@ -141,10 +146,6 @@ body {
 .post .social a.facebook { background-position: 24px 0px; }
 .post .social a.github   { background-position: 48px 0px; }
 .post .social a.vk       { background-position: 72px 0px; }
-
-.post .city {
-	padding: 10px;
-}
 
 .post p {
 	padding: 10px;

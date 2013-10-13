@@ -30,6 +30,7 @@ var yr = yr || require('yate/lib/runtime.js');
         if ((v1)) {
             r0 += "<a href=\"" + "#" + "\" class=\"" + "button new" + "\">" + scalar2xml( ( v1 ) ) + "</a>";
         }
+        r0 += "<img style=\"" + "display:none;" + "\" class=\"" + "loader" + "\" src=\"" + "img/ajax-loader.gif" + "\"/>";
         r0 += "</div>";
 
         return r0;
