@@ -27,13 +27,16 @@ $(function () {
 	}
 
 	var AboutView = Backbone.View.extend({
-		el: "#page",
 		render: function () {
 			this.$el.html(yr.run("about", {}));
+			$("#page").replaceWith(this.$el);
+		},
+		initialize: function () {
+			this.$el.attr("id", "page");
 		}
 	});
 
-	var MongolabModel = Backbone.Model.extend({
+	var BaseModel = Backbone.Model.extend({
 		parse: function(response) {
 			response.id = response._id.$oid;
 			return response;
@@ -48,88 +51,101 @@ $(function () {
 				json.cid = this.cid;
 			}
 			return json;
-		}
-	});
-
-	var Student = MongolabModel.extend({
-		url: function() {
-			if (this.isNew()) {
-				return "students";
-			} else {
-				return "students/" + this.id;
-			}
 		},
 		toggle: function() {
 			this.set("expanded", !this.get("expanded"));
+		},
+		url: function() {
+			if (this.isNew()) {
+				return this.mongoCollection;
+			} else {
+				return this.mongoCollection + "/" + this.id;
+			}
 		}
 	});
 
-	var StudentList = Backbone.Collection.extend({
-		url: "students",
+	var BaseCollection = Backbone.Collection.extend({
+		url: function () {
+			return this.model.prototype.mongoCollection;
+		}
+	});
+
+	var Student = BaseModel.extend({
+		mongoCollection: "students"
+	});
+
+	var StudentList = BaseCollection.extend({
 		model: Student
 	});
 
-	var studentList = new StudentList();
-
-
-	var StudentListView = Backbone.View.extend({
-		el: "#page",
-		students: studentList,
-		newStudentCid: null,
+	var BaseListView = Backbone.View.extend({
 		events: {
-			"click .student .avatar, .student .caption": "toggleStudent",
-			"click .new":           "newStudent",
-			"submit .student-form": "saveStudent",
-			"click .cancel":        "cancelEdit",
-			"click .edit":          "editStudent",
-			"click .delete":        "deleteStudent"
+			"click .post .fold-handle": "toggleItem",
+			"click .new":               "newItem",
+			"click .edit":              "editItem",
+			"click .cancel":            "cancelEdit",
+			"submit .student-form":     "saveItem",
+			"click .delete":            "deleteItem"
 		},
-		toggleStudent: function (ev) {
-			var cid = $(ev.currentTarget).closest(".student").data("cid");
-			this.students.get(cid).toggle();
+		toggleItem: function (ev) {
+			var cid = $(ev.currentTarget).closest(".post").data("cid");
+			this.collection.get(cid).toggle();
 		},
-		newStudent: function (ev) {
-			if (!this.newStudentCid) {
-				this.$el.find(".float-wrapper .button").addClass("inactive");
-				var student = new Student();
-				this.newStudentCid = student.cid;
-				this.$el.children(".post:first").before("<div data-cid='" +
-								student.cid + "'></div>");
-				this.students.unshift(student);
-				student.set("edit", true);
+		initialize: function () {
+			this.$el.attr("id", "page");
+			var self = this;
+			this.collection.on("change", function (model) {
+				var data = model.toJSON();
+				self.$el.children("[data-cid='" + model.cid + "']")
+						.replaceWith(yr.run(
+								self.templatingModule,
+								self.modelRenderData(model)
+						));
+			});
+		},
+		fetchData: function () {
+			return this.collection.fetch();
+		},
+		render: function () {
+			var self = this;
+			this.fetchData().done(function(a) {
+				self.$el.html(yr.run(
+						self.templatingModule,
+						self.collectionRenderData()
+				));
+				$("#page").replaceWith(self.$el);
+			});
+		},
+		newItem: function (ev) {
+			if (!this.newCid) {
+				this.$el.find(".float-wrapper .new.button").addClass("inactive");
+				var model = new this.ModelClass();
+				this.newCid = model.cid;
+				this.$el.children(".post:first")
+						.before("<div data-cid='" + model.cid + "'></div>");
+				this.collection.unshift(model);
+				model.set("edit", true);
 			}
 			return false;
 		},
-		editStudent: function (ev) {
-			var cid = $(ev.currentTarget).closest(".student").data("cid");
-			this.students.get(cid).set("edit", true);
+		editItem: function (ev) {
+			var cid = $(ev.currentTarget).closest(".post").data("cid");
+			this.collection.get(cid).set("edit", true);
 			return false;
 		},
-		deleteStudent: function (ev) {
-			var self = this;
-			var studentElem = $(ev.currentTarget).closest(".student");
-			var student = this.students.get(studentElem.data("cid"));
-			student.destroy({
-				success:function () {
-					self.students.remove(student);
-					studentElem.remove();
-				}
-			});
-			return false;
-		},
-		saveStudent: function (ev) {
+		saveItem: function (ev) {
 			var self = this;
 			var data = $(ev.currentTarget).serializeJSON();
-			var student = this.students.get(data.cid);
-			student.save(data, {
+			var model = this.collection.get(data.cid);
+			model.save(data, {
 				cleanup: true,
-				success: function (student) {
-					if (student.cid === self.newStudentCid) {
+				success: function (model) {
+					if (model.cid === self.newCid) {
 						self.$el.find(".float-wrapper .button").removeClass("inactive");
-						self.newStudentCid = null;
+						self.newCid = null;
 					}
-					student.set("edit", false);
-					student.set("expanded", true);
+					model.set("edit", false);
+					model.set("expanded", true);
 				},
 				error: function() {
 					alert("error!");
@@ -138,97 +154,100 @@ $(function () {
 			return false;
 		},
 		cancelEdit: function (ev) {
-			var studentElem = $(ev.currentTarget).closest(".student");
-			var student = this.students.get(studentElem.data("cid"));
-			if (student.cid === this.newStudentCid) {
+			var modelElem = $(ev.currentTarget).closest(".post");
+			var model = this.collection.get(modelElem.data("cid"));
+			if (model.cid === this.newCid) {
 				this.$el.find(".float-wrapper .button").removeClass("inactive");
-				this.newStudentCid = null;
-				this.students.remove(student);
-				studentElem.remove();
+				this.newCid = null;
+				this.collection.remove(model);
+				modelElem.remove();
 			}
-			student.set("edit", false);
+			model.set("edit", false);
 			return false;
 		},
-		initialize: function () {
+		deleteItem: function (ev) {
 			var self = this;
-			this.students.on("change", function (model) {
-				var data = model.toJSON();
-				self.$el.children("[data-cid='" + model.cid + "']")
-					.replaceWith(yr.run("students", {
-						single: true,
-						students: data
-					}));
-			});
-		},
-		render: function () {
-			var self = this;
-			this.students.fetch({
-				success: function(studentList) {
-					self.$el.html(yr.run("students", {
-						students: studentList.toJSON()
-					}));
+			var modelElem = $(ev.currentTarget).closest(".post");
+			var model = this.collection.get(modelElem.data("cid"));
+			model.destroy({
+				success:function () {
+					self.collection.remove(model);
+					modelElem.remove();
 				}
 			});
+			return false;
 		}
 	});
 
-	var Lector = MongolabModel.extend({
-		toggle: function() {
-			this.set("expanded", !this.get("expanded"));
+
+	var StudentListView = BaseListView.extend({
+		templatingModule: "students",
+		ModelClass: Student,
+		modelRenderData: function (model) {
+			return {
+				single: true,
+				students: model.toJSON()
+			}
+		},
+		collectionRenderData: function () {
+			return {
+				students: this.collection.toJSON()
+			}
 		}
 	});
-	var LectorList = Backbone.Collection.extend({
-		url: "lectors",
+
+	var Lector = BaseModel.extend({
+		mongoCollection: "lectors"
+	});
+
+	var LectorList = BaseCollection.extend({
 		model: Lector
 	});
 
-	var Lecture = MongolabModel.extend({});
-	var LectureList = Backbone.Collection.extend({
-		url: "lectures",
+	var Lecture = BaseModel.extend({
+		mongoCollection: "lectures"
+	});
+
+	var LectureList = BaseCollection.extend({
 		model: Lecture
 	});
 
-	var LectorListView = Backbone.View.extend({
-		el: "#page",
-		lectors: new LectorList(),
+	var LectorListView = BaseListView.extend({
+		templatingModule: "lectors",
+		ModelClass: Student,
 		lectures: new LectureList(),
-		events: {
-			"click .lector .avatar, .lector .caption": "toggleLector"
+		modelRenderData: function (model) {
+			return {
+				single: true,
+				lectors: model.toJSON(),
+				lectures: this.lectures.toJSON()
+			}
 		},
-		toggleLector: function (ev) {
-			var id = $(ev.currentTarget).closest(".lector").data("id");
-			this.lectors.get(id).toggle();
+		collectionRenderData: function () {
+			return {
+				lectors: this.collection.toJSON(),
+				lectures: this.lectures.toJSON()
+			}
 		},
-		initialize: function() {
-			var self = this;
-			this.lectors.on("change", function (model) {
-				self.$el.children("[data-cid='" + model.get("id") + "']")
-						.replaceWith(yr.run("lectors", {
-							single: true,
-							lectors: model.toJSON(), 
-							lectures: self.lectures.toJSON()
-						}));
-			});
-		},
-		render: function () {
-			var self = this;
-			$.when(
-				this.lectors.fetch(),
+		fetchData: function () {
+			return $.when(
+				BaseListView.prototype.fetchData.apply(this, arguments),
 				this.lectures.fetch()
-			).done(function () {
-				self.$el.html(yr.run("lectors", {
-					lectors: self.lectors.toJSON(),
-					lectures: self.lectures.toJSON()
-				}));
-			});
+			)
 		}
 	});
 
 	var aboutView = new AboutView();
 	_.bindAll(aboutView, "render");
-	var studentListView = new StudentListView();
+
+	var studentListView = new StudentListView({
+		collection: new StudentList()
+	});
 	_.bindAll(studentListView, "render");
-	var lectorListView = new LectorListView();
+
+	var lectorListView = new LectorListView({
+		collection: new LectorList(),
+	});
 	_.bindAll(lectorListView, "render");
 
 	var Router = Backbone.Router.extend({

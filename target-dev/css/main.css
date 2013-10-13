@@ -89,7 +89,7 @@ body {
 	float: left;
 }
 
-.post .avatar {
+.post .fold-handle {
 	cursor: pointer;
 }
 
@@ -114,7 +114,6 @@ body {
 .post .caption {
 	line-height: 30px;
 	font-weight: bold;
-	cursor: pointer;
 	float: left;
 
 }

@@ -52,11 +52,11 @@ var yr = yr || require('yate/lib/runtime.js');
 
     var j20 = [ 0, 'edit' ];
 
-    function p2(m, c0, i0, l0) {
+    function p1(m, c0, i0, l0) {
         return !simpleBoolean('edit', c0);
     }
 
-    var j21 = [ 0, 'students', 2, p2 ];
+    var j21 = [ 0, 'students', 2, p1 ];
 
     var j23 = [ 0, 'cid' ];
 
@@ -76,11 +76,11 @@ var yr = yr || require('yate/lib/runtime.js');
 
     var j31 = [ 0, 'about' ];
 
-    function p4(m, c0, i0, l0) {
+    function p3(m, c0, i0, l0) {
         return simpleBoolean('edit', c0);
     }
 
-    var j32 = [ 0, 'students', 2, p4 ];
+    var j32 = [ 0, 'students', 2, p3 ];
 
     var j34 = [ 0, 'profiles', 0, 'ya' ];
 
@@ -118,11 +118,11 @@ var yr = yr || require('yate/lib/runtime.js');
         function f6(m, c0, i0, l0, a0, v11) {
             var r0 = '';
 
-            function p3(m, c0, i0, l0) {
+            function p2(m, c0, i0, l0) {
                 return c0.name == v11;
             }
 
-            var j22 = [ 0, 'profiles', 0, '*', 2, p3 ];
+            var j22 = [ 0, 'profiles', 0, '*', 2, p2 ];
 
             //  var sn_url : nodeset
             var v12 = m.s(j22, c0);
@@ -140,7 +140,7 @@ var yr = yr || require('yate/lib/runtime.js');
         r0 += "<div class=\"" + "left" + "\">";
         r0 += "<img";
         a0.a = {
-            'class': new yr.scalarAttr("avatar")
+            'class': new yr.scalarAttr("avatar fold-handle")
         };
         a0.s = 'img';
         if (nodeset2boolean( (selectNametest('expanded', c0, [])) )) {
@@ -156,7 +156,7 @@ var yr = yr || require('yate/lib/runtime.js');
         r0 += "</div>";
         r0 += "<div class=\"" + "content" + "\">";
         r0 += "<div class=\"" + "caption-wrapper" + "\">";
-        r0 += "<div class=\"" + "caption" + "\">" + nodeset2xml( ( selectNametest('first_name', c0, []) ) ) + " " + nodeset2xml( ( selectNametest('last_name', c0, []) ) ) + "</div>";
+        r0 += "<div class=\"" + "caption fold-handle" + "\">" + nodeset2xml( ( selectNametest('first_name', c0, []) ) ) + " " + nodeset2xml( ( selectNametest('last_name', c0, []) ) ) + "</div>";
         if (nodeset2boolean( (selectNametest('profiles', c0, [])) )) {
             r0 += "<div class=\"" + "social" + "\">";
             r0 += f6(m, c0, i0, l0, a0, "ya");
@@ -190,11 +190,11 @@ var yr = yr || require('yate/lib/runtime.js');
     M.t5 = function t5(m, c0, i0, l0, a0) {
         var r0 = '';
 
-        function p5(m, c0, i0, l0) {
+        function p4(m, c0, i0, l0) {
             return c0.name == "$oid";
         }
 
-        var j33 = [ 0, '_id', 0, '*', 2, p5 ];
+        var j33 = [ 0, '_id', 0, '*', 2, p4 ];
 
         //  var id : nodeset
         var v13 = m.s(j33, c0);
