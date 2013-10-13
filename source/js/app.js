@@ -68,6 +68,15 @@ $(function () {
 	var BaseCollection = Backbone.Collection.extend({
 		url: function () {
 			return this.model.prototype.mongoCollection;
+		},
+		comparator: function (a, b) {
+			var al = a.get("last_name"), bl = b.get("last_name")
+			if (al < bl) return -1;
+			if (al > bl) return 1;
+			var af = a.get("first_name"), bf = b.get("first_name")
+			if (af < bf) return -1;
+			if (af > bf) return 1;
+			return 0;
 		}
 	});
 
