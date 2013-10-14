@@ -49,6 +49,10 @@ body {
 .float-wrapper {
 	overflow: auto;
 }
+.post .float-wrapper {
+	padding: 10px;
+	overflow: auto;
+}
 
 .header {
 	padding: 10px;
@@ -84,6 +88,10 @@ body {
 .float-wrapper .button.inactive:hover {
 	background-color: #eee;
 }
+.float-wrapper .button.remove-lecture {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
 
 .float-wrapper .loader {
 	float: right;
@@ -110,17 +118,14 @@ body {
 	overflow: hidden;
 }
 
-.post .caption-wrapper {
-	padding: 10px;
-	overflow: auto;
-}
-
-
 .post .caption {
 	line-height: 30px;
 	font-weight: bold;
 	float: left;
+}
 
+.post .caption.lectures {
+	margin-top: 10px;
 }
 
 .post .caption:first-letter {
@@ -149,6 +154,15 @@ body {
 
 .post p {
 	padding: 10px;
+}
+
+.post .lecture-name {
+	padding-left: 10px;
+}
+
+.post ul {
+	padding-left: 45px;
+	padding-bottom: 10px;
 }
 
 .post td {

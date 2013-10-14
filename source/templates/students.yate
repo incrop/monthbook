@@ -3,14 +3,10 @@ module "students"
 include "util.yate"
 
 match / {
-	if (.single) {
-		apply .students
-	} else {
+	if (!.single) {
 		header("Список учащихся", "Добавить")
-		for .students {
-			apply .
-		}
 	}
+	apply .students
 }
 
 match .students[!.edit] {
@@ -34,7 +30,7 @@ match .students[!.edit] {
 			</img>
 		</div>
 		<div class="content">
-			<div class="caption-wrapper">
+			<div class="float-wrapper">
 				<div class="caption fold-handle">{.first_name} {.last_name}</div>
 				if (.profiles) {
 					<div class="social">
@@ -71,6 +67,16 @@ match .students[.edit] {
 			if (id) {
 				<input type="hidden" name="_id[$oid]" value="{id}"/>
 			}
+			<div class="float-wrapper">
+				<div class="caption">
+					if (id) {
+						"Редактирование учащегося"
+					} else {
+						"Новый учащийся"
+					}
+				</div>
+			</div>
+			<hr/>
 			<input type="hidden" name="cid" value="{.cid}"/>
 			<table>
 				<tbody>

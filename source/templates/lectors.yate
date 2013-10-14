@@ -3,14 +3,15 @@ module "lectors"
 include "util.yate"
 
 match / {
-	if (.single) {
-		apply .lectors
+	if (.lecture_index) {
+		fix = 0 + .lecture_index
+		apply .lectures edit (fix)
 	} else {
-		header("Список лекторов", "Добавить")
-		for .lectors {
-			apply .
+		if (!.single) {
+			header("Список лекторов", "Добавить")
 		}
 	}
+	apply .lectors
 }
 
 match .lectors[!.edit] {
@@ -29,13 +30,13 @@ match .lectors[!.edit] {
 			</img>
 		</div>
 		<div class="content">
-			<div class="caption-wrapper">
+			<div class="float-wrapper">
 				<div class="caption fold-handle">{.first_name} {.last_name}</div>
 			</div>
 			if (.expanded) {
 				<hr/>
 				if (.native_id) {
-					url = "http://tech.yandex.ru/people/{.native_id}/"
+					url = "http://tech.yandex.ru/people/{.tech_id}/"
 					<p>Cсылка на профиль в Яндексе: <a href="{url}">{url}</a></p>
 				}
 				if (.about) {
@@ -44,15 +45,10 @@ match .lectors[!.edit] {
 				lector_lectures = ..lectures[.lector_id == lector_id]
 				if (lector_lectures) {
 					<hr/>
-					<div class="caption-wrapper">
+					<div class="float-wrapper">
 						<div class="caption">Лекции:</div>
 					</div>
-					for lector_lectures {
-						<p>
-							"{.name}: "
-							<a href="{.url}">{.url}</a>
-						</p>
-					}
+					apply lector_lectures
 				}
 				<hr/>
 				<div class="float-wrapper">
@@ -65,6 +61,21 @@ match .lectors[!.edit] {
 	</div>
 }
 
+match .lectures {
+	<div class="lecture-name">{.name}:</div>
+	<ul>
+		if (.tech_url) {
+			<li>Ссылка на лекцию: <a href="{.tech_url}">{.tech_url}</a></li>
+		}
+		if (.video_url) {
+			<li>Видео: <a href="{.video_url}">{.video_url}</a></li>
+		}
+		if (.slides_url) {
+			<li>Слайды: <a href="{.slides_url}">{.slides_url}</a></li>
+		}
+	</ul>
+}
+
 match .lectors[.edit] {
 	<div class="lector post" data-cid="{.cid}">
 		<form class="edit-form">
@@ -72,6 +83,16 @@ match .lectors[.edit] {
 			if (lector_id) {
 				<input type="hidden" name="_id[$oid]" value="{lector_id}"/>
 			}
+			<div class="float-wrapper">
+				<div class="caption">
+					if (lector_id) {
+						"Редактирование лектора"
+					} else {
+						"Новый лектор"
+					}
+				</div>
+			</div>
+			<hr/>
 			<input type="hidden" name="cid" value="{.cid}"/>
 			<table>
 				<tbody>
@@ -95,8 +116,20 @@ match .lectors[.edit] {
 						<td>Ссылка на превью:</td>
 						<td><input type="text" name="preview_url" value="{.preview_url}"/></td>
 					</tr>
+					<tr>
+						<td>О себе:</td>
+						<td><textarea rows="6" name="about">{.about}</textarea></td>
+					</tr>
 				</tbody>
 			</table>
+			<hr/>
+			<div class="float-wrapper">
+				<div class="caption lectures">Лекции:</div>
+				<a href="#" class="button new-lecture">Добавить</a>
+			</div>
+			<div class="lecture-list">
+				apply ..lectures[.lector_id == lector_id] edit
+			</div>
 			<hr/>
 			<div class="float-wrapper">
 				<a class="button cancel" href="#">Отмена</a>
@@ -106,3 +139,39 @@ match .lectors[.edit] {
 		</form>
 	</div>
 }
+
+match .lectures edit (idx = index()) {
+	<div class="lecture-item" data-cid="{.cid}">
+		<hr/>
+		<input type="hidden" name="lectures[{idx}][cid]" value="{.cid}"/>
+		lecture_id = ._id.*[name() == "$oid"]
+		if (lecture_id) {
+			<input type="hidden" name="lectures[{idx}][_id][$oid]" value="{lecture_id}"/>
+		}
+		<table>
+			<tbody>
+				<tr>
+					<td>Название:</td>
+					<td><input type="text" name="lectures[{idx}][name]" value="{.name}"/></td>
+				</tr>
+				<tr>
+					<td>Ссылка на лекцию:</td>
+					<td><input type="text" name="lectures[{idx}][tech_url]" value="{.tech_url}"/></td>
+				</tr>
+				<tr>
+					<td>Ссылка на видео:</td>
+					<td><input type="text" name="lectures[{idx}][video_url]" value="{.video_url}"/></td>
+				</tr>
+				<tr>
+					<td>Ссылка на слайды:</td>
+					<td><input type="text" name="lectures[{idx}][slides_url]" value="{.slides_url}"/></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="float-wrapper">
+			<a class="button delete-lecture" href="#">Удалить</a>
+		</div>
+	</div>
+}
+
+

@@ -231,6 +231,103 @@ $(function () {
 		templatingModule: "lectors",
 		ModelClass: Lector,
 		lectures: new LectureList(),
+		events: _.extend({
+			"click .new-lecture":    "newLecture",
+			"click .delete-lecture": "deleteLecture"
+		}, BaseListView.prototype.events),
+		newLecture: function (ev) {
+			var lectorElem = $(ev.currentTarget).closest(".post");
+			var lector = this.collection.get(lectorElem.data("cid"));
+			var lecture = new Lecture();
+			lecture.set("lector_id", lector.id);
+			lectorElem.find(".lecture-list").prepend(
+					yr.run("lectors", {
+						lecture_index: this.lectures.where({lector_id: lector.id}).length,
+						lectures: lecture.toJSON()
+					})
+			);
+			this.lectures.add(lecture);
+			return false;
+		},
+		deleteLecture: function (ev) {;
+			var lectureElem = $(ev.currentTarget).closest(".lecture-item");
+			var lecture = this.lectures.get(lectureElem.data("cid"));
+			if (lecture.isNew()) {
+				this.lectures.remove(lecture);
+			} else {
+				var lectorElem = lectureElem.closest(".post");
+				var lector = this.collection.get(lectorElem.data("cid"));
+				var deletedLectures = lector.get("deletedLectures");
+				if (!deletedLectures) {
+					deletedLectures = [];
+					lector.set("deletedLectures", deletedLectures, {silent:true});
+				}
+				deletedLectures.push(lecture);
+			}
+			lectureElem.remove();
+			return false;
+		},
+		cancelEdit: function (ev) {
+			var lectorElem = $(ev.currentTarget).closest(".post");
+			var lector = this.collection.get(lectorElem.data("cid"));
+			lector.set("deletedLectures", [], {silent:true});
+			this.lectures = new LectureList(this.lectures.filter(function (lecture) {
+				return lecture.get("lector_id") !== lector.id || !lecture.isNew();
+			}));
+			return BaseListView.prototype.cancelEdit.apply(this, arguments);
+		},
+		saveItem: function (ev) {
+			var self = this;
+			var data = $(ev.currentTarget).serializeJSON();
+			var lector = this.collection.get(data.cid);
+			self.$el.children("[data-cid='" + lector.cid + "']").find(".loader").show();
+			var actions = [];
+			var i;
+			if (data.lectures) {
+				for (i = 0; i < data.lectures.length; i++) {
+					var lectureData = data.lectures[i];
+					if (lectureData) {
+						var lecture = this.lectures.get(lectureData.cid)
+						actions.push(lecture.save(lectureData, {cleanup:true}));
+					}
+				}
+				delete data.lectures;
+			}
+			var deletedLectures = lector.get("deletedLectures") || [];
+			for (i = 0; i < deletedLectures.length; i++) {
+				var deletedLecture = deletedLectures[i];
+				actions.push(deletedLecture.destroy({
+					success:function () {
+						self.lectures.remove(deletedLecture);
+					}
+				}));
+			}
+			lector.set("deletedLectures", [], {silent:true});
+			actions.push(lector.save(data, {cleanup:true}));
+			$.when.apply($, actions).done(function () {
+				if (lector.cid === self.newCid) {
+					self.$el.find(".float-wrapper .button").removeClass("inactive");
+					self.newCid = null;
+				}
+				lector.set("edit", false);
+				lector.set("expanded", true);
+			});
+			return false;
+		},
+		deleteItem: function (ev) {
+			var self = this;
+			var lectorElem = $(ev.currentTarget).closest(".post");
+			var lector = this.collection.get(lectorElem.data("cid"));
+			this.lectures.each(function (lecture) {
+				if (lecture.get("lector_id") === lector.id) {
+					if (!lecture.isNew()) {
+						lecture.destroy();
+					}
+					self.lectures.remove(lecture);
+				}
+			});
+			return BaseListView.prototype.deleteItem.apply(this, arguments);
+		},
 		modelRenderData: function (model) {
 			return {
 				single: true,
