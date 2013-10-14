@@ -4,7 +4,7 @@
 			"$oid": "525aa225e4b00ad92f8ba14d"
 		},
 		"name": "Архитектура операционной системы",
-		"url": "http://tech.yandex.ru/events/kit/3/talks/522/",
+		"tech_url": "http://tech.yandex.ru/events/kit/3/talks/522/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -12,7 +12,7 @@
 			"$oid": "525aa225e4b00ad92f8ba151"
 		},
 		"name": "Внедрение идей БЭМ на не-Яндекс проект",
-		"url": "http://tech.yandex.ru/events/yasubbotnik/kiev-may-2011/talks/235/",
+		"tech_url": "http://tech.yandex.ru/events/yasubbotnik/kiev-may-2011/talks/235/",
 		"lector_id": "525aa225e4b0e48d0ffc1d66"
 	} ,
 	{
@@ -20,7 +20,7 @@
 			"$oid": "525aa225e4b00ad92f8ba152"
 		},
 		"name": "Архитектура веб-сервисов",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1345/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1345/",
 		"lector_id": "525aa225e4b0e48d0ffc1d66"
 	} ,
 	{
@@ -28,7 +28,7 @@
 			"$oid": "525aa225e4b00ad92f8ba153"
 		},
 		"name": "Языки программирования ",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1340/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1340/",
 		"lector_id": "525aa225e4b0e48d0ffc1d66"
 	} ,
 	{
@@ -36,7 +36,7 @@
 			"$oid": "525aa225e4b00ad92f8ba154"
 		},
 		"name": "История успеха выпускников ШРИ",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1288/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1288/",
 		"lector_id": "525aa225e4b0e48d0ffc1d67"
 	} ,
 	{
@@ -44,7 +44,7 @@
 			"$oid": "525aa225e4b00ad92f8ba155"
 		},
 		"name": "Кеширование на клиенте и сервере",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1330/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1330/",
 		"lector_id": "525aa225e4b0e48d0ffc1d68"
 	} ,
 	{
@@ -52,7 +52,7 @@
 			"$oid": "525aa225e4b00ad92f8ba156"
 		},
 		"name": "Редактор/среда разработки",
-		"url": "http://tech.yandex.ru/events/shri/simf-2013/talks/668/",
+		"tech_url": "http://tech.yandex.ru/events/shri/simf-2013/talks/668/",
 		"lector_id": "525aa225e4b0e48d0ffc1d69"
 	} ,
 	{
@@ -60,7 +60,7 @@
 			"$oid": "525aa225e4b00ad92f8ba157"
 		},
 		"name": "Изучение и редактирование кода ",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1293/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1293/",
 		"lector_id": "525aa225e4b0e48d0ffc1d69"
 	} ,
 	{
@@ -68,7 +68,7 @@
 			"$oid": "525aa225e4b00ad92f8ba158"
 		},
 		"name": "Тестирование (ШРИ 2013)",
-		"url": "http://tech.yandex.ru/events/shri/msk-2012/talks/535/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2012/talks/535/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6a"
 	} ,
 	{
@@ -76,7 +76,7 @@
 			"$oid": "525aa225e4b00ad92f8ba15a"
 		},
 		"name": "Тестирование (Симфирополь 2013)",
-		"url": "http://tech.yandex.ru/events/shri/simf-2013/talks/672/",
+		"tech_url": "http://tech.yandex.ru/events/shri/simf-2013/talks/672/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6a"
 	} ,
 	{
@@ -84,7 +84,7 @@
 			"$oid": "525aa225e4b00ad92f8ba15b"
 		},
 		"name": "Тестирование (ШРИ 2013)",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1326/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1326/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6a"
 	} ,
 	{
@@ -92,7 +92,7 @@
 			"$oid": "525aa225e4b00ad92f8ba15c"
 		},
 		"name": "Общий цикл разработки (dev-cycle)",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1289/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1289/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6b"
 	} ,
 	{
@@ -100,7 +100,7 @@
 			"$oid": "525aa225e4b00ad92f8ba15f"
 		},
 		"name": "Развертывание верстки",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1327/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1327/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6c"
 	} ,
 	{
@@ -108,7 +108,7 @@
 			"$oid": "525aa225e4b00ad92f8ba161"
 		},
 		"name": "Используем git без проблем",
-		"url": "http://tech.yandex.ru/events/yasubbotnik/kiev-may-2012/talks/112/",
+		"tech_url": "http://tech.yandex.ru/events/yasubbotnik/kiev-may-2012/talks/112/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6d"
 	} ,
 	{
@@ -116,7 +116,7 @@
 			"$oid": "525aa225e4b00ad92f8ba162"
 		},
 		"name": "Git — ветки, деревья, лес",
-		"url": "http://tech.yandex.ru/events/yasubbotnik/spb-jun-2012/talks/431/",
+		"tech_url": "http://tech.yandex.ru/events/yasubbotnik/spb-jun-2012/talks/431/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6d"
 	} ,
 	{
@@ -124,7 +124,7 @@
 			"$oid": "525aa225e4b00ad92f8ba163"
 		},
 		"name": "Системы контроля версий",
-		"url": "http://tech.yandex.ru/events/shri/msk-2012/talks/534/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2012/talks/534/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6d"
 	} ,
 	{
@@ -132,7 +132,7 @@
 			"$oid": "525aa225e4b00ad92f8ba164"
 		},
 		"name": "Системы контроля версий",
-		"url": "http://tech.yandex.ru/events/shri/simf-2013/talks/671/",
+		"tech_url": "http://tech.yandex.ru/events/shri/simf-2013/talks/671/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6d"
 	} ,
 	{
@@ -140,7 +140,7 @@
 			"$oid": "525aa225e4b00ad92f8ba167"
 		},
 		"name": "Cистемы контроля версий ",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1321/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1321/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6d"
 	} ,
 	{
@@ -148,7 +148,7 @@
 			"$oid": "525aa225e4b00ad92f8ba137"
 		},
 		"name": "HTTP-протокол (ШРИ 2012)",
-		"url": "http://tech.yandex.ru/events/shri/msk-2012/talks/537/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2012/talks/537/",
 		"lector_id": "525aa225e4b0e48d0ffc1d62"
 	} ,
 	{
@@ -156,7 +156,7 @@
 			"$oid": "525aa225e4b00ad92f8ba138"
 		},
 		"name": "jQuery",
-		"url": "http://tech.yandex.ru/events/shri/msk-2012/talks/543/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2012/talks/543/",
 		"lector_id": "525aa225e4b0e48d0ffc1d62"
 	} ,
 	{
@@ -164,7 +164,7 @@
 			"$oid": "525aa225e4b00ad92f8ba139"
 		},
 		"name": "HTTP-протокол (Симферополь 2013)",
-		"url": "http://tech.yandex.ru/events/shri/simf-2013/talks/678/",
+		"tech_url": "http://tech.yandex.ru/events/shri/simf-2013/talks/678/",
 		"lector_id": "525aa225e4b0e48d0ffc1d62"
 	} ,
 	{
@@ -172,7 +172,7 @@
 			"$oid": "525aa225e4b00ad92f8ba13a"
 		},
 		"name": "HTTP-протокол (ШРИ 2013)",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1328/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1328/",
 		"lector_id": "525aa225e4b0e48d0ffc1d62"
 	} ,
 	{
@@ -180,7 +180,7 @@
 			"$oid": "525aa225e4b00ad92f8ba13b"
 		},
 		"name": "Регулярные выражения",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1344/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1344/",
 		"lector_id": "525aa225e4b0e48d0ffc1d62"
 	} ,
 	{
@@ -188,7 +188,7 @@
 			"$oid": "525aa225e4b00ad92f8ba13c"
 		},
 		"name": "Вводная по ШРИ",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1286/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1286/",
 		"lector_id": "525aa225e4b0e48d0ffc1d63"
 	} ,
 	{
@@ -196,7 +196,7 @@
 			"$oid": "525aa225e4b00ad92f8ba13d"
 		},
 		"name": "Операционные системы (КИТ 2012)",
-		"url": "http://tech.yandex.ru/events/kit/1/talks/645/",
+		"tech_url": "http://tech.yandex.ru/events/kit/1/talks/645/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -204,7 +204,7 @@
 			"$oid": "525aa225e4b00ad92f8ba13e"
 		},
 		"name": "Архитектура ЭВМ (КИТ 2012)",
-		"url": "http://tech.yandex.ru/events/kit/1/talks/646/",
+		"tech_url": "http://tech.yandex.ru/events/kit/1/talks/646/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -212,7 +212,7 @@
 			"$oid": "525aa225e4b00ad92f8ba13f"
 		},
 		"name": "Операционная система GNU/Linux: устройство и функционирование",
-		"url": "http://tech.yandex.ru/events/kit/1/talks/647/",
+		"tech_url": "http://tech.yandex.ru/events/kit/1/talks/647/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -220,7 +220,7 @@
 			"$oid": "525aa225e4b00ad92f8ba140"
 		},
 		"name": "Файловые системы",
-		"url": "http://tech.yandex.ru/events/kit/1/talks/649/",
+		"tech_url": "http://tech.yandex.ru/events/kit/1/talks/649/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -228,7 +228,7 @@
 			"$oid": "525aa225e4b00ad92f8ba141"
 		},
 		"name": "Сети и протоколы",
-		"url": "http://tech.yandex.ru/events/kit/1/talks/650/",
+		"tech_url": "http://tech.yandex.ru/events/kit/1/talks/650/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -236,7 +236,7 @@
 			"$oid": "525aa225e4b00ad92f8ba142"
 		},
 		"name": "Сети и протоколы. Виртуализация",
-		"url": "http://tech.yandex.ru/events/kit/1/talks/651/",
+		"tech_url": "http://tech.yandex.ru/events/kit/1/talks/651/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -244,7 +244,7 @@
 			"$oid": "525aa225e4b00ad92f8ba143"
 		},
 		"name": "Безопасность информационных систем",
-		"url": "http://tech.yandex.ru/events/kit/1/talks/652/",
+		"tech_url": "http://tech.yandex.ru/events/kit/1/talks/652/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -252,7 +252,7 @@
 			"$oid": "525aa225e4b00ad92f8ba144"
 		},
 		"name": "Системы хранения данных",
-		"url": "http://tech.yandex.ru/events/kit/1/talks/648/",
+		"tech_url": "http://tech.yandex.ru/events/kit/1/talks/648/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -260,7 +260,7 @@
 			"$oid": "525aa225e4b00ad92f8ba145"
 		},
 		"name": "Операционные системы (КИТ 2013)",
-		"url": "http://tech.yandex.ru/events/kit/2/talks/590/",
+		"tech_url": "http://tech.yandex.ru/events/kit/2/talks/590/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -268,7 +268,7 @@
 			"$oid": "525aa225e4b00ad92f8ba146"
 		},
 		"name": "Архитектура ЭВМ (КИТ 2013)",
-		"url": "http://tech.yandex.ru/events/kit/2/talks/591/",
+		"tech_url": "http://tech.yandex.ru/events/kit/2/talks/591/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -276,7 +276,7 @@
 			"$oid": "525aa225e4b00ad92f8ba147"
 		},
 		"name": "Популярный Linux",
-		"url": "http://tech.yandex.ru/events/kit/2/talks/592/",
+		"tech_url": "http://tech.yandex.ru/events/kit/2/talks/592/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -284,7 +284,7 @@
 			"$oid": "525aa225e4b00ad92f8ba148"
 		},
 		"name": "Системы хранения данных",
-		"url": "http://tech.yandex.ru/events/kit/2/talks/593/",
+		"tech_url": "http://tech.yandex.ru/events/kit/2/talks/593/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -292,7 +292,7 @@
 			"$oid": "525aa225e4b00ad92f8ba149"
 		},
 		"name": "Файловые системы",
-		"url": "http://tech.yandex.ru/events/kit/2/talks/595/",
+		"tech_url": "http://tech.yandex.ru/events/kit/2/talks/595/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -300,7 +300,7 @@
 			"$oid": "525aa225e4b00ad92f8ba14a"
 		},
 		"name": "Командная строка Unix",
-		"url": "http://tech.yandex.ru/events/shri/msk-2012/talks/531/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2012/talks/531/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -308,7 +308,7 @@
 			"$oid": "525aa225e4b00ad92f8ba14b"
 		},
 		"name": "Профессии в мире информационных технологий",
-		"url": "http://tech.yandex.ru/events/kit/3/talks/520/",
+		"tech_url": "http://tech.yandex.ru/events/kit/3/talks/520/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -316,7 +316,7 @@
 			"$oid": "525aa225e4b00ad92f8ba14c"
 		},
 		"name": "Инструментарий системного инженера",
-		"url": "http://tech.yandex.ru/events/kit/3/talks/521/",
+		"tech_url": "http://tech.yandex.ru/events/kit/3/talks/521/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -324,7 +324,7 @@
 			"$oid": "525aa225e4b00ad92f8ba14e"
 		},
 		"name": "Командная строка Unix",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1292/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1292/",
 		"lector_id": "525aa225e4b0e48d0ffc1d64"
 	} ,
 	{
@@ -332,7 +332,7 @@
 			"$oid": "525aa225e4b00ad92f8ba14f"
 		},
 		"name": "Браузеры",
-		"url": "http://tech.yandex.ru/events/shri/msk-2012/talks/532/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2012/talks/532/",
 		"lector_id": "525aa225e4b0e48d0ffc1d65"
 	} ,
 	{
@@ -340,7 +340,7 @@
 			"$oid": "525aa225e4b00ad92f8ba150"
 		},
 		"name": "Механизм работы браузера ",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1329/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1329/",
 		"lector_id": "525aa225e4b0e48d0ffc1d65"
 	} ,
 	{
@@ -348,7 +348,7 @@
 			"$oid": "525aa225e4b00ad92f8ba159"
 		},
 		"name": "Производительность клиентсайда через тестирование скорости отрисовки страниц",
-		"url": "http://tech.yandex.ru/events/yasubbotnik/spb-dec-2012/talks/479/",
+		"tech_url": "http://tech.yandex.ru/events/yasubbotnik/spb-dec-2012/talks/479/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6a"
 	} ,
 	{
@@ -356,7 +356,7 @@
 			"$oid": "525aa225e4b00ad92f8ba15d"
 		},
 		"name": "Администрирование небольших сервисов, или Один за всех и 100 на одного ",
-		"url": "http://tech.yandex.ru/events/yac/2011/talks/36/",
+		"tech_url": "http://tech.yandex.ru/events/yac/2011/talks/36/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6c"
 	} ,
 	{
@@ -364,7 +364,7 @@
 			"$oid": "525aa225e4b00ad92f8ba15e"
 		},
 		"name": "Деплой",
-		"url": "http://tech.yandex.ru/events/shri/simf-2013/talks/669/",
+		"tech_url": "http://tech.yandex.ru/events/shri/simf-2013/talks/669/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6c"
 	} ,
 	{
@@ -372,7 +372,7 @@
 			"$oid": "525aa225e4b00ad92f8ba160"
 		},
 		"name": "Последняя миля разработки интерфейсов",
-		"url": "http://tech.yandex.ru/events/yasubbotnik/msk-jul-2010/talks/917/",
+		"tech_url": "http://tech.yandex.ru/events/yasubbotnik/msk-jul-2010/talks/917/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6d"
 	} ,
 	{
@@ -380,7 +380,7 @@
 			"$oid": "525aa225e4b00ad92f8ba165"
 		},
 		"name": "Менеджмент кода, или Почему SCM",
-		"url": "http://tech.yandex.ru/events/yasubbotnik/kiev-apr-2013/talks/844/",
+		"tech_url": "http://tech.yandex.ru/events/yasubbotnik/kiev-apr-2013/talks/844/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6d"
 	} ,
 	{
@@ -388,7 +388,7 @@
 			"$oid": "525aa225e4b00ad92f8ba166"
 		},
 		"name": "Maintainer кода в большом проекте",
-		"url": "http://tech.yandex.ru/events/yasubbotnik/spb-jun-2013/talks/943/",
+		"tech_url": "http://tech.yandex.ru/events/yasubbotnik/spb-jun-2013/talks/943/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6d"
 	} ,
 	{
@@ -396,7 +396,7 @@
 			"$oid": "525aa225e4b00ad92f8ba168"
 		},
 		"name": "Вики-синтаксис",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1291/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1291/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6e"
 	} ,
 	{
@@ -404,7 +404,7 @@
 			"$oid": "525aa225e4b00ad92f8ba169"
 		},
 		"name": "Документирование информации",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1290/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1290/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6e"
 	} ,
 	{
@@ -412,7 +412,7 @@
 			"$oid": "525aa225e4b00ad92f8ba16a"
 		},
 		"name": "Сканирование уязвимостей со вкусом Яндекса",
-		"url": "http://tech.yandex.ru/events/yac/2011/talks/24/",
+		"tech_url": "http://tech.yandex.ru/events/yac/2011/talks/24/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6f"
 	} ,
 	{
@@ -420,7 +420,7 @@
 			"$oid": "525aa225e4b00ad92f8ba16b"
 		},
 		"name": "Автоматизированное тестирование безопасности конфигурации промышленных веб-серверов",
-		"url": "http://tech.yandex.ru/events/yasubbotnik/spb-jun-2012/talks/435/",
+		"tech_url": "http://tech.yandex.ru/events/yasubbotnik/spb-jun-2012/talks/435/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6f"
 	} ,
 	{
@@ -428,7 +428,7 @@
 			"$oid": "525aa225e4b00ad92f8ba16c"
 		},
 		"name": "Безопасность веб-приложений (ШРИ 2012)",
-		"url": "http://tech.yandex.ru/events/shri/msk-2012/talks/540/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2012/talks/540/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6f"
 	} ,
 	{
@@ -436,7 +436,7 @@
 			"$oid": "525aa225e4b00ad92f8ba16d"
 		},
 		"name": "Безопасность веб-приложений (Симфирополь 2013)",
-		"url": "http://tech.yandex.ru/events/shri/simf-2013/talks/677/",
+		"tech_url": "http://tech.yandex.ru/events/shri/simf-2013/talks/677/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6f"
 	} ,
 	{
@@ -444,7 +444,7 @@
 			"$oid": "525aa225e4b00ad92f8ba16e"
 		},
 		"name": "Безопасность веб-приложений (ШРИ 2013)",
-		"url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1337/",
+		"tech_url": "http://tech.yandex.ru/events/shri/msk-2013/talks/1337/",
 		"lector_id": "525aa225e4b0e48d0ffc1d6f"
 	}
 ]

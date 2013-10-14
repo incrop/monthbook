@@ -21,14 +21,14 @@ var yr = yr || require('yate/lib/runtime.js');
     var M = new yr.Module();
 
     // func header(caption, buttonCaption) : xml
-    M.f7 = function f7(m, c0, i0, l0, a0, v16, v17) {
+    M.f7 = function f7(m, c0, i0, l0, a0, v19, v20) {
         var r0 = '';
 
         r0 += closeAttrs(a0);
         r0 += "<div class=\"" + "float-wrapper" + "\">";
-        r0 += "<div class=\"" + "header" + "\">" + scalar2xml( ( v16 ) ) + "</div>";
-        if ((v17)) {
-            r0 += "<a href=\"" + "#" + "\" class=\"" + "button new" + "\">" + scalar2xml( ( v17 ) ) + "</a>";
+        r0 += "<div class=\"" + "header" + "\">" + scalar2xml( ( v19 ) ) + "</div>";
+        if ((v20)) {
+            r0 += "<a href=\"" + "#" + "\" class=\"" + "button new" + "\">" + scalar2xml( ( v20 ) ) + "</a>";
         }
         r0 += "<img style=\"" + "display:none;" + "\" class=\"" + "loader" + "\" src=\"" + "img/ajax-loader.gif" + "\"/>";
         r0 += "</div>";
@@ -37,7 +37,7 @@ var yr = yr || require('yate/lib/runtime.js');
     };
 
     // func post_caption(caption) : scalar
-    M.f8 = function f8(m, c0, i0, l0, v18) {
+    M.f8 = function f8(m, c0, i0, l0, v21) {
         var r0 = '';
 
         return r0;
