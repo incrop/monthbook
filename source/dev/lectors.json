@@ -3,7 +3,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d62"
 		},
-		"native_id": 47352,
+		"tech_id": 47352,
 		"first_name": "Алексей",
 		"last_name": "Бережной",
 		"about": "До Яндекса занимался разработкой браузерной MMORPG. С 2011 года работает над интерфейсом Яндекс.Директа.",
@@ -14,7 +14,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d63"
 		},
-		"native_id": 143134,
+		"tech_id": 143134,
 		"first_name": "Анна",
 		"last_name": "Чеботкевич",
 		"photo_url": "http://avatars.yandex.net/get-yaevents/300cb1b51bfadaca152a75491c232b92/365x365",
@@ -24,7 +24,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d64"
 		},
-		"native_id": 310,
+		"tech_id": 310,
 		"first_name": "Виктор",
 		"last_name": "Ашик",
 		"photo_url": "http://avatars.yandex.net/get-yaevents/a679b4725fe296178cc47bc3804c0b6e/365x365",
@@ -34,7 +34,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d65"
 		},
-		"native_id": 46216,
+		"tech_id": 46216,
 		"first_name": "Георгий",
 		"last_name": "Мостоловица",
 		"about": "Веб-разработчик. В Яндексе занимается ускорением фронтенда Поиска.",
@@ -45,7 +45,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d66"
 		},
-		"native_id": 434,
+		"tech_id": 434,
 		"first_name": "Денис",
 		"last_name": "Бугарчев",
 		"about": "Верстальщик, разработчик веб-интерфейсов, автор подкаста о веб-разработке «Сделайте мне красиво!».",
@@ -56,7 +56,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d67"
 		},
-		"native_id": 144389,
+		"tech_id": 144389,
 		"first_name": "Дмитрий",
 		"last_name": "Поляков",
 		"photo_url": "http://avatars.yandex.net/get-yaevents/cf731f3868db81beb9414444926e328b/365x365",
@@ -66,7 +66,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d68"
 		},
-		"native_id": 151056,
+		"tech_id": 151056,
 		"first_name": "Евгений",
 		"last_name": "Дорошенко",
 		"photo_url": "http://avatars.yandex.net/get-yaevents/b42044e74a6cfefb5db858e42956f721/365x365",
@@ -76,7 +76,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d69"
 		},
-		"native_id": 60778,
+		"tech_id": 60778,
 		"first_name": "Игорь",
 		"last_name": "Новак",
 		"about": "Разработчик интерфейсов",
@@ -87,7 +87,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d6a"
 		},
-		"native_id": 45533,
+		"tech_id": 45533,
 		"first_name": "Марина",
 		"last_name": "Широчкина",
 		"about": "Занимается тестированием уже девять лет. В Яндексе с 2007 года. Последний год работает в группе производительности интерфейсов.",
@@ -98,7 +98,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d6b"
 		},
-		"native_id": 144433,
+		"tech_id": 144433,
 		"first_name": "Михаил",
 		"last_name": "Трошев",
 		"photo_url": "http://avatars.yandex.net/get-yaevents/9dc5433ef8399aaba298434c14c0792f/365x365",
@@ -108,7 +108,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d6c"
 		},
-		"native_id": 25,
+		"tech_id": 25,
 		"first_name": "Роман",
 		"last_name": "Андриади",
 		"about": "Работает в департаменте эксплуатации Яндекса с 2005 года. С 2010 года —руководитель группы администрирования коммуникационных, контент- и внутренних сервисов.",
@@ -119,7 +119,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d6d"
 		},
-		"native_id": 380,
+		"tech_id": 380,
 		"first_name": "Сергей",
 		"last_name": "Сергеев",
 		"about": "Профессионально занимается разработкой уже более 10 лет, из них 5 в Яндексе.",
@@ -130,7 +130,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d6e"
 		},
-		"native_id": 144481,
+		"tech_id": 144481,
 		"first_name": "Сергей",
 		"last_name": "Черкасов",
 		"photo_url": "http://avatars.yandex.net/get-yaevents/e4136deea69b5bed89ed08615435d7b2/365x365",
@@ -140,7 +140,7 @@
 		"_id": {
 			"$oid": "525aa225e4b0e48d0ffc1d6f"
 		},
-		"native_id": 20,
+		"tech_id": 20,
 		"first_name": "Тарас",
 		"last_name": "Иващенко",
 		"about": "Администратор информационной безопасности в Яндексе. Специалист по информационной безопасности, проповедник свободного программного обеспечения, участник проектов w3af и OWASP.",
